@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio15 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Ejecicio 15");
+		Scanner teclado = new Scanner(System.in);
+		int x1=teclado.nextInt();
+		int x2=teclado.nextInt();
+		int mayor=0; int menor=0; int cont =0; int par = 0; int suma=0;
+		if (x1 <x2) {
+			mayor = x2;
+			menor = x1;
+		} else {
+			mayor = x1;
+			menor = x2;
+		}
+		while (menor < mayor) {
+			cont ++;
+			if (menor % 2 ==0) {
+				par++;
+			} else {
+				suma = suma + menor;
+			}
+			System.out.println(menor);
+			menor ++;
+		}
+		System.out.println("hay " + cont + " numeros naturales entre " + x1 + " y "+ x2);
+		System.out.println("hay " + par + " numeros pares entre " + x1 + " y "+ x2);
+		System.out.println(suma + " Es la suma de los numeros impares");
+	}
+
+}

@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio23 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Ejercicio 23");
+		int contF=0; int contC=0; int pos=0; String tab=""; String tab2="\t";
+		while (pos <=100) {
+			
+			while (contC < 10) {
+				System.out.print(tab + pos);
+				tab = tab2;
+				contC ++;
+				pos ++;
+				if (pos > 100) {
+					contC = 10;
+				}
+			}
+			contC = 0;
+			tab = "";
+			System.out.println("");
+			contF ++;
+		}
+		contC = 10;
+		System.out.println("En total tiene "+ contF + " filas, y " + contC + " columnas");
+	}
+
+}
