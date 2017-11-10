@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio42 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 3 Vendedores, 12 meses, 4 productos
+		Scanner teclado= new Scanner(System.in);
+		int ventas[][][]=new int[3][12][4];
+		int cantidad=0; int suma=0;
+		for (int Vendedor = 0; Vendedor < ventas.length; Vendedor++) {
+			for (int Meses = 0; Meses < ventas[0].length; Meses++) {
+				for (int Productos = 0; Productos < ventas[0][0].length; Productos++) {
+					cantidad=(int) (Math.random()*10)+1;
+					ventas[Vendedor][Meses][Productos]=cantidad;
+				}
+			}
+		}
+		for (int Vendedor = 0; Vendedor < ventas.length; Vendedor++) {
+			System.out.println("Vendedor " +(Vendedor+1));
+			for (int Meses = 0; Meses < ventas[0].length; Meses++) {
+				for (int Productos = 0; Productos < ventas[0][0].length; Productos++) {
+					
+					//System.out.println("El vendedor " + (Vendedor+1) + ", en el mes " + (Meses+1) + ", ha vendido " + ventas[Vendedor][Meses][Productos]+ " del producto " + (Productos+1) );
+					System.out.print("\t"+ventas[Vendedor][Meses][Productos]);
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+		int total[][]=new int[12][4];
+		int cont=0;
+		for (int Meses = 0; Meses < total.length; Meses++) {
+			for (int Producto = 0; Producto < total.length; Producto++) {
+				for (int Vendedor = 0; Vendedor < total.length; Vendedor++) {
+					total[Meses][Producto]=ventas[Vendedor][Meses][Producto];
+					suma=suma+total[Meses][Producto];
+				}
+			System.out.println("Las ventas totales del Mes " +(Meses +1) +" del producto " +(Producto +1)+ " es de " + suma);
+			}
+			System.out.println();
+		}
+	}
+
+}

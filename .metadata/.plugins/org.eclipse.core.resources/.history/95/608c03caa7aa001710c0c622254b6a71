@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Primero {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola Mundo");
+		int VariableA;
+		int Suma;
+		VariableA = 10;
+		System.out.println(VariableA);
+		if(VaribaleA == 3){Suma = Suma + VariableA} else {Suma = Suma - VariableA}
+		System.out.println(VariableA);
+	}
+
+}

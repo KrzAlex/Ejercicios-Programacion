@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		System.out.println("Introduce un texto");
+		String texto=teclado.nextLine();
+		System.out.println("Introduce la palabra que desea buscar");
+		String palabra=teclado.nextLine();
+		int comodin1=0;
+		int comodin2=0;
+		
+		for (int i = 0; i < texto.length(); i++) {
+			if (texto.indexOf(palabra.substring(i, palabra.length()))!=-1){
+				System.out.println(esta);
+			}
+		}
+		
+		
+		
+
+		
+	}
+
+}

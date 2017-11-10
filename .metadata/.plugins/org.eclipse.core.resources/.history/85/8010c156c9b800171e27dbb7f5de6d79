@@ -1,0 +1,48 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio41 {
+
+	/**
+	 * @param args
+	 * Se dispone de una tabla de 5 páginas, 10 filas y 20 columnas, que se refieren al centro, 
+	 * al curso y al número de alumnos de un colegio respectivamente. 
+	 * Imprimir la nota media por curso y la nota media máxima y su centro de pertenencia.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Las Pág son los institutos, las filas son las asignaturas, las columnas son las notas
+		int matriz1[][][]= new int [5][10][20];
+		float media=0, suma=0; float mediaMax=0;
+		for (int centro = 0; centro < matriz1.length; centro++) {
+			System.out.println();
+			System.out.println("Centro" + (centro +1));
+			for (int curso = 0; curso < matriz1[0].length; curso++) {
+				System.out.println();
+				System.out.println("Asignatura " + (curso +1));
+				for (int alumno = 0; alumno < matriz1[0][0].length; alumno++) {
+					matriz1[centro][curso][alumno]=(int) (Math.random()*10)+1;
+					suma = suma + matriz1[centro][curso][alumno];
+					System.out.print(matriz1[centro][curso][alumno] + " ");
+				}
+				media= suma/matriz1[0][0].length;
+				
+				System.out.println(" ");
+				System.out.println("La media de la asignatura " + (curso + 1 )+ " es de " + media);
+				media=0;
+				suma=0;
+			}
+			System.out.println();
+	
+			System.out.println("La media maxima del centro " + (centro +1) + " es de " + mediaMax);
+		
+			mediaMax=0;
+		}
+	}
+
+}

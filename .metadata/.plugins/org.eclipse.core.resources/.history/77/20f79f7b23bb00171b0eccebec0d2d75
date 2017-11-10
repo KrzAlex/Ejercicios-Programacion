@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio42 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 3 Vendedores, 12 meses, 4 productos
+		Scanner teclado= new Scanner(System.in);
+		iny ventas[][][]=new int[][][];
+	}
+
+}

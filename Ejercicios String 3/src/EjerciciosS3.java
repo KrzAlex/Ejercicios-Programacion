@@ -29,7 +29,6 @@ public class EjerciciosS3 {
 				comodin2=comodin2+n;
 				contador1++;
 				System.out.println("Está en la posición "+(comodin2+contador1));
-
 				texto= texto.substring(n+1);
 			}
 		}

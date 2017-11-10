@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		String Texto=teclado.nextLine();
+		int comodin=0; 
+		while  (comodin <1){
+			if (Texto.length()>80) {
+				System.out.println("Por favor , Introduzca un texto de menos de 80 caracteres");
+				Texto=teclado.nextLine();
+			}
+			if (Texto.length()<80) {
+				comodin=1;
+			}
+		}
+		int comodin2=0;
+		int comodin3=0;
+		while (comodin2<Texto.length()) {
+			while (comodin3<=comodin2) {
+				System.out.print(Texto.charAt(comodin3));
+				comodin3++;
+			}
+			System.out.println();
+			
+			comodin2++;
+			comodin3=0;
+		}
+		
+	}
+
+}

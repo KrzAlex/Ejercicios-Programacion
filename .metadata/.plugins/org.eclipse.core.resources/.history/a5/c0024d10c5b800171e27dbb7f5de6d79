@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio41 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Las Pág son los institutos, las filas son las asignaturas, las columnas son el numero de alumnos
+		String matriz1[][][]= new String [5][10][20];
+	}
+
+}

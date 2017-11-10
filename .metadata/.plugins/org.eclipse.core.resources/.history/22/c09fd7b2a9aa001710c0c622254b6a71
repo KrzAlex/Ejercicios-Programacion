@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Primero {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hola Mundo");
+		int variableA;
+		int suma = 50;
+		variableA = 10;
+		System.out.println(variableA);
+		if(variableA == 3){
+			suma = suma + variableA;
+			}else{
+				suma = suma - variableA;
+			}
+		System.out.println(suma);
+		
+		System.out.println("Reloj");
+		int hora=00;
+		int min=00;
+		int seg=00;
+		while (hora < 25) {
+			System.out.println(hora+"/"+min+"/"+seg);
+			seg ++;
+			if (seg == 60) {
+				min ++;
+				seg = 0;
+			}
+			if (min == 60) {
+				hora ++;
+				min = 0;
+			}
+			if (hora == 24) {
+				hora = 00;
+			}
+			}
+			
+		}
+	}
+
+

@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio42 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 3 Vendedores, 12 meses, 4 productos
+		Scanner teclado= new Scanner(System.in);
+		int ventas[][][]=new int[3][12][4];
+		for (int Vendedor = 0; Vendedor < ventas.length; Vendedor++) {
+			for (int Meses = 0; Meses < ventas[0].length; Meses++) {
+				for (int Productos = 0; Productos < ventas[0][0].length; Productos++) {
+					
+				}
+			}
+		}
+		
+	}
+
+}

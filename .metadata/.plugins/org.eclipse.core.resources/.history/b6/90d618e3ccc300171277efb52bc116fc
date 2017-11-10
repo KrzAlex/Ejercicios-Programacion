@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS8 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		String texto=teclado.nextLine();
+		texto=texto.toUpperCase();
+		String codificado;
+		String opcion;
+		System.out.println("Codificando");
+		
+		
+		
+		
+		
+		System.out.println("Se ha codificado");
+		System.out.println("Desea Decodificarlo");
+		
+	}
+
+}

@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS9 {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("Por favor, introduzca el numero de personas que vas a introducir");
+		int personas= teclado.nextInt();
+		Thread.sleep(1000);
+		
+		System.out.println("Introduzca el código der la persona " +i);
+		
+		
+		
+		
+		
+	}
+
+}

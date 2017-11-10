@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio41 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Las Pág son los institutos, las filas son las asignaturas, las columnas son las notas
+		int matriz1[][][]= new int [5][10][20];
+		int media=0, suma=0; int mediaMax=0, sumaMax=0;
+		for (int centro = 0; centro < matriz1.length; centro++) {
+			System.out.println("Centro" + (centro +1));
+			for (int asignatura = 0; asignatura < matriz1[0].length; asignatura++) {
+				System.out.println("Asignatura " + (asignatura +1));
+				for (int nota = 0; nota < matriz1[0][0].length; nota++) {
+					matriz1[centro][asignatura][nota]=(int) (Math.random()*10)+1;
+					suma = suma + matriz1[centro][asignatura][nota];
+				}
+				media= suma/matriz1[0][0].length;
+				sumaMax= media + sumaMax;
+				System.out.println("La media de la asignatura " + (asignatura + 1 )+ " es de " + media);
+			}
+			mediaMax= sumaMax / matriz1[0].length;
+			System.out.println("La media maxima del centro " + (centro +1) + " es de " + mediaMax);
+		}
+	}
+
+}

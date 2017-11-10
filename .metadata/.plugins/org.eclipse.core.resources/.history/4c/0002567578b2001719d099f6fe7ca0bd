@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio14 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Ejecicio 14");
+		Scanner teclado = new Scanner(System.in);
+		int x=teclado.nextInt();
+		int mayor=x; int menor=x;
+		int cont=1;
+		while (cont <= 5) {
+			int x2=teclado.nextInt();
+			if (x2 > mayor) {
+				mayor =x2;
+			} else {
+				menor = x2;
+			}
+		cont++;
+		}
+		System.out.println("El numero mayor es " + mayor);
+		System.out.println("El numero menor es " + menor);
+	}
+
+}

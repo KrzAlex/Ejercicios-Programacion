@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio30 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Ejercicio 30");
+		int caballo1=0; int caballo2=0;
+		int c1=0;int c2=0;
+		String tc1=" "; String tc2=" ";
+		int mc1= (int) (Math.random()*5)+1;
+		int mc2= (int) (Math.random()*5)+1;
+		int comodin=0;
+		while (c1 <= 10 || c2 <= 10) {
+			System.out.println(tc1 + "C1");
+			System.out.println(tc1 + "C2");
+		
+			while (comodin <= mc1) {
+				tc1 = tc1 + "\t";
+				comodin++;
+				c1++;
+			}
+			comodin = 0;
+			while (comodin <= mc2) {
+				tc2 = tc2 + "\t";
+				comodin++;
+				c2++;
+			}
+			comodin = 0;
+	
+			mc1= (int) (Math.random()*5)+1;
+			mc2= (int) (Math.random()*5)+1;
+		}
+		if (c1 > c2) {
+			System.out.println("Ha ganado el caballo 1");
+		} else {
+			System.out.println("Ha ganado el caballo 1");
+		
+	}
+
+}

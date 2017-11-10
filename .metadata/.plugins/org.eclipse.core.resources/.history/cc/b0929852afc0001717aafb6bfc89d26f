@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		System.out.println("Introduce un texto");
+		String texto=teclado.nextLine();
+		System.out.println("Introduce la palabra que desea buscar");
+		String palabra=teclado.nextLine();
+		int contador1=0;
+		int comodin2=0;
+		
+		for (int i = 0; i < texto.length(); i++) {
+			if (texto.indexOf(palabra.substring(i, (palabra.length()+contador1)))!=-1){
+				contador1++;
+				if (contador1 == palabra.length()) {
+					System.out.println("Esta");
+					comodin2++;
+				}
+			}else{
+				contador1 = 0;
+			}
+		}
+		if (comodin2<1) {
+			System.out.println("La palabra que busas no esta");
+		}
+		
+		
+
+		
+	}
+
+}

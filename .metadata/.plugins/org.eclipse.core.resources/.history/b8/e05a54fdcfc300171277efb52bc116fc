@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS8 {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		String texto=teclado.nextLine();
+		texto=texto.toUpperCase();
+		String codificado="";
+		int posicion=0;
+		String opcion;
+		String abecedario="ABCDEFGHIJKLMNOPRSTUVWXYZ";
+		System.out.println("Codificando");
+		Thread.sleep(1000);
+		for (int i = 0; i < texto.length(); i++) {
+			posicion=abecedario.indexOf(texto.substring(i, i+1));
+			
+			codificado=codificado.concat(abecedario.substring(posicion, posicion+1));
+		}
+		System.out.println("Se ha codificado");
+		System.out.println(codificado);
+		System.out.println("Desea Decodificarlo, SI o NO?");
+		opcion=teclado.next();
+		if (opcion.equals("S")|| opcion.equals("SI") || opcion.equals("s")|| opcion.equals("si")) {
+			
+		}
+	}
+
+}
