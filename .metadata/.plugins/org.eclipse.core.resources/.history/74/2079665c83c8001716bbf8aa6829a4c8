@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS9Op2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		String codigo;
+		int comodin=0;
+		String matriz[]= new String [50];
+		int año;
+		int bucle2=0;
+		int bucle=0;
+		String sexo;
+		int clase;
+		
+		
+		
+		int error=0;
+		
+		while (bucle==0){
+		while (bucle2==0) {
+			codigo=teclado.nextLine();
+			if (codigo.equals("00000000")) {
+				bucle++;
+				break;
+			}
+			while (codigo.length()!=8) {
+				System.out.println("Por favor introduzca un codigo correcto");
+				codigo=teclado.nextLine();
+			}
+			codigo=codigo.toUpperCase();
+			año=Integer.parseInt(codigo.substring(0, 4));
+			while ((año>=1990 && año<=1995) ) {
+				System.out.println("El año del codigo esta incorrecto, por favor vuelva a introducir el codigo");
+				comodin++;
+				break;
+			}
+			if (comodin>0) {
+				break;
+			}
+			sexo=codigo.substring(4, 5);
+			while ((sexo.equals("H")||sexo.equals("M"))) {
+				System.out.println("El sexo del codigo esta incorrecto, por favor vuelva a introducir el codigo");
+				comodin++;
+				break;
+			}
+			if (comodin>0) {
+				break;
+			}
+			clase=Integer.parseInt(codigo.substring(5,6));
+			
+			
+		}
+		error++;
+		}
+	}
+
+}

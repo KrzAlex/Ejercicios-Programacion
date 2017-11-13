@@ -1,0 +1,115 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS9Op2 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		String codigo;
+		int comodin=0;
+		System.out.println("Cuantos candidatos va a haber?");
+		int candidatos=teclado.nextInt();
+		String matriz[]= new String [candidatos];
+		int año;
+		int bucle2=0;
+		int bucle=0;
+		String sexo;
+		int clase;
+		String cerrar="00000000";
+		int sexotip=0;
+		int i=0;
+		int error=0;
+		int correcto=0;
+		while (bucle==0){
+		while (bucle2==0) {
+			comodin=0;
+			System.out.println("Introduce el codigo de la persona "+(i+1));
+			codigo=teclado.nextLine();
+			while (codigo.length()!=8) {
+				System.out.println("Por favor introduzca un codigo correcto Ej.(1992h157)");
+				codigo=teclado.nextLine();
+			}
+			if (codigo.equals(cerrar)) {
+				bucle++;
+				break;
+			}
+			codigo=codigo.toUpperCase();
+			año=Integer.parseInt(codigo.substring(0, 4));
+			while (!(año>=1990 && año<=1995) ) {
+				System.out.println("El año del codigo esta incorrecto, por favor vuelva a introducir el codigo");
+				comodin++;
+				break;
+			}
+			if (comodin>0) {
+				break;
+			}
+			sexo=codigo.substring(4, 5);
+			while (!(sexo.equals("H")||sexo.equals("h")||sexo.equals("m")||sexo.equals("M"))) {
+				System.out.println("El sexo del codigo esta incorrecto, por favor vuelva a introducir el codigo");
+				comodin++;
+				break;
+			}
+			if (sexo.equals("H")||sexo.equals("h")) {
+				sexotip=0;
+			} else {
+				sexotip=1;
+			}
+			if (comodin>0) {
+				break;
+			}
+			clase=Integer.parseInt(codigo.substring(5,6));
+			while (!(clase==1 || clase ==2)) {
+				System.out.println("La clase que ha puesto ha sido incorrecto, por favor vuelva a introducir el codigo");
+				comodin++;
+				break;
+			}
+			if (comodin>0) {
+				break;
+			}
+			
+			if (comodin==0) {
+				matriz[i]=codigo;	
+				i ++;
+				correcto++;
+			}
+			
+			
+		}
+		error++;
+		}
+		System.out.println("Desea imprimir a los candidatos?");
+		String opcion=teclado.next();
+		opcion=opcion.toUpperCase();
+		while (!(opcion.equals("S")||opcion.equals("SI")||opcion.equals("N")||opcion.equals("NO"))) {
+			System.out.println("Porfavor introduzca si o no");
+			opcion=teclado.next();
+			opcion=opcion.toUpperCase();
+		}
+		if (opcion.equals("S")||opcion.equals("SI")) {
+			for (int j = 0; j < matriz.length; j++) {
+				System.out.println("El candidato "+(j+1)+" es "+(matriz[j].substring(4, 5))+ " y esta en la clase "+(matriz[j].substring(5,6)) );
+				
+				
+				
+			}
+			
+			
+			
+		}else{
+			
+		}
+		
+	}
+
+}
