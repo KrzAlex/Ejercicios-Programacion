@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;Texto&apos; in &apos;EjerciciosS10.main(...)&apos; to &apos;texto&apos;&#x0D;&#x0A;- Original project: &apos;Ejercicios String 10&apos;&#x0D;&#x0A;- Original element: &apos;EjerciciosS10.main(String[]).Texto&apos;&#x0D;&#x0A;- Renamed element: &apos;Texto&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;Texto&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{EjerciciosS10.java[EjerciciosS10~main~\[QString;@Texto!356!387!363!367!QString;!0!false" name="texto" references="true" stamp="1510670322098" version="1.0"/>
+</session>

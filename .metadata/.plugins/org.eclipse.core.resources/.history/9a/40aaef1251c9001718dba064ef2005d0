@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+import javax.sound.midi.Synthesizer;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS10 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		String abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ ";
+		int matriz[]=new int[28];
+		System.out.println("Introduzca un texto");
+		String texto=teclado.nextLine();
+		texto=texto.toUpperCase();
+		int comodin=0; 
+		int caracesp=0;
+		while  (comodin < 1){
+			if (texto.length()>60) {
+				System.out.println("Por favor , Introduzca un texto de menos de 60 caracteres");
+				texto=teclado.nextLine();
+			}
+			if (texto.length()<=60) {
+				comodin=1;
+			}
+		}
+		for (int i = 0; i < texto.length(); i++) {
+			if (abecedario.indexOf(texto.substring(i, i+1))!=-1) {
+				matriz[i]++;
+			}else{
+				caracesp++;
+			}
+		}
+		String comodin2="";
+		for (int i = 0; i < matriz.length; i++) {
+			if (matriz[i]!=0) {
+				comodin2=abecedario.substring(i,i+1);
+				System.out.println("Hay " + matriz[i]+ " " + comodin2);
+			}
+		}
+	}
+
+}

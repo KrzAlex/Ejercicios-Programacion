@@ -32,22 +32,29 @@ public class EjerciciosS9Op2 {
 		int candidato=0;
 		String matriz[]= new String [50];
 		System.out.println("Los codigos deben ser asi:");
-		System.out.println("Los primer 4 digitos es el año entre 1990-1995");
-		System.out.println("El quinto digito si es hombre o mujer");
-		System.out.println("Despues si esta en la calse 1 o en la 2");
-		System.out.println("Y los ultimos dos caracteres, las inicales de la persona");
 		Thread.sleep(1000);
-		while (bucle==0){
-			
+		System.out.println("Los primer 4 digitos es el año entre 1990-1995");
+		Thread.sleep(1000);
+		System.out.println("El quinto digito si es hombre o mujer");
+		Thread.sleep(1000);
+		System.out.println("Despues si esta en la clase 1 o en la 2");
+		Thread.sleep(1000);
+		System.out.println("Y los ultimos dos caracteres, las iniciales de la persona");
+		Thread.sleep(1000);
+		while (bucle==0){	
 		while (bucle2==0) {
-			
 			comodin=0;
 			System.out.println("Introduce el codigo de la persona "+(i+1));
 			codigo=teclado.next();
 			while (codigo.length()!=8) {
 				System.out.println("Por favor introduzca un codigo correcto Ej.(1992h157)");
+				Thread.sleep(500);
 				System.out.println("el año deberia estar comprendido entre 1990 y 1995");
-				
+				comodin++;
+				break;
+			}
+			if (comodin>0) {
+				break;
 			}
 			if (codigo.equals(cerrar)) {
 				bucle++;
@@ -64,7 +71,7 @@ public class EjerciciosS9Op2 {
 				break;
 			}
 			sexo=codigo.substring(4, 5);
-			while (!(sexo.equals("H")||sexo.equals("h")||sexo.equals("m")||sexo.equals("M"))) {
+			while (!(sexo.equals("H")||sexo.equals("M"))) {
 				System.out.println("El sexo del codigo esta incorrecto, por favor vuelva a introducir el codigo");
 				comodin++;
 				break;
@@ -86,21 +93,18 @@ public class EjerciciosS9Op2 {
 			if (comodin>0) {
 				break;
 			}
-			
 			if (comodin==0) {
 				matriz[i]=codigo;	
 				i ++;
 				correcto++;
 				candidato++;
 			}
-			
-			
 		}
 		if(comodin>1){
 		error++;
 		}
 		}
-		System.out.println("Ha introducido "+error+" veces un codigo erroneo");
+		System.out.println("Ha introducido "+correcto+" veces un codigo bien");
 		System.out.println("Desea imprimir a los candidatos?");
 		String opcion=teclado.next();
 		opcion=opcion.toUpperCase();
@@ -118,7 +122,7 @@ public class EjerciciosS9Op2 {
 			
 			
 		}else{
-			
+			System.out.println("Gracias por utilizar este metodo");
 		}
 		
 	}
