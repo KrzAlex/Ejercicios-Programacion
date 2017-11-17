@@ -30,6 +30,7 @@ public class EjerciciosS9Op2 {
 		int error=0;
 		int correcto=0;
 		int candidato=0;
+		int contH1=0, contH2=0, contM1=0, contM2=0;
 		String matriz[]= new String [50];
 		System.out.println("Los codigos deben ser asi:");
 		Thread.sleep(1000);
@@ -48,8 +49,6 @@ public class EjerciciosS9Op2 {
 			codigo=teclado.next();
 			while (codigo.length()!=8) {
 				System.out.println("Por favor introduzca un codigo correcto Ej.(1992h157)");
-				Thread.sleep(500);
-				System.out.println("el año deberia estar comprendido entre 1990 y 1995");
 				comodin++;
 				break;
 			}
@@ -99,6 +98,21 @@ public class EjerciciosS9Op2 {
 				correcto++;
 				candidato++;
 			}
+			if (clase==1) {
+				if (sexo.equals("M")) {
+					contM1++;
+				} else {
+					contH1++;
+				}
+			}else{
+				if (sexo.equals("M")) {
+					contM2++;
+				} else {
+					contH2++;
+				}
+			}
+			
+			
 		}
 		if(comodin>1){
 		error++;
@@ -124,7 +138,15 @@ public class EjerciciosS9Op2 {
 		}else{
 			System.out.println("Gracias por utilizar este metodo");
 		}
-		
+		Thread.sleep(1000);
+		System.out.println();
+		System.out.println("En la clase 1 hay:");
+		System.out.println("   "+contH1+" Hombres");
+		System.out.println("   "+contM1+" Mujeres");
+		System.out.println();
+		System.out.println("En la clase 2 hay:");
+		System.out.println("   "+contH2+" Hombres");
+		System.out.println("   "+contM2+" Mujeres");
 	}
 
 }

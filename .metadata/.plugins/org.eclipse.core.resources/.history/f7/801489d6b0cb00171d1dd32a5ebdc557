@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner teclado= new Scanner(System.in);
+		String cadena;
+		String valores="0123456789";
+		do{
+			System.out.println("Escribe un número mayor que 0");
+			cadena=teclado.nextLine();
+			for(int i=0; i<cadena.length(); i++){
+				if(valores.indexOf(cadena.substring(i, i+1))!=1){
+					System.out.println("Valor no permitido");
+				}
+			}
+		}while (cadena.length()<0);
+			for(int i=0; i<cadena.length(); i++){
+				if(cadena.charAt(i)=='1' ||cadena.charAt(i)=='4'){
+					System.out.print("   ");
+				}else if(cadena.charAt(i)!='1' ||cadena.charAt(i)!='4'){
+					System.out.print(" _ ");
+				}
+			}
+			System.out.println();
+			for(int i=0; i<cadena.length(); i++){
+				if(cadena.charAt(i)=='4' ||cadena.charAt(i)=='8'|| cadena.charAt(i)=='9'){
+					System.out.print("|_|");
+				}else if(cadena.charAt(i)=='2' ||cadena.charAt(i)=='3'){
+					System.out.print(" _|");
+				}else if (cadena.charAt(i)=='5' ||cadena.charAt(i)=='6'){
+					System.out.print("|_ ");
+				}else if (cadena.charAt(i)=='7' ||cadena.charAt(i)=='1'){
+					System.out.print("  |");
+				}else{
+					System.out.print("| |");
+				}
+			}
+			System.out.println();
+			for(int i=0; i<cadena.length(); i++){
+				if (cadena.charAt(i)=='1' ||cadena.charAt(i)=='4'||cadena.charAt(i)=='7') {
+					System.out.print("  |");
+				}else if (cadena.charAt(i)=='3' ||cadena.charAt(i)=='5'||cadena.charAt(i)=='9') {
+					System.out.print(" _|");
+				}else if (cadena.charAt(i)=='6' ||cadena.charAt(i)=='8'||cadena.charAt(i)=='0'){
+					System.out.print("|_|");
+				}else {
+					System.out.print("|_ ");
+				}
+			}
+				
+					System.out.println();
+				
+
+	}
+
+}
