@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		System.out.println("Introduce un nombre");
+		String nombre1=teclado.nextLine();
+		System.out.println("Introduce otro nombre");
+		String nombre2=teclado.nextLine();
+		
+		String comodin1="";
+		String comodin2="";
+		
+		for (int i = 0; i < nombre1.length(); i++) {
+			if (" ".indexOf(nombre1.substring(i, i+1))!=-1) {
+				comodin1=nombre1.substring(0, i);
+			}
+			
+		}
+		System.out.println(comodin1);
+	}
+
+}

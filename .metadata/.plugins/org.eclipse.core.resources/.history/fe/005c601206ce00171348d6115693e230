@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		System.out.println("Introduzta una palabra");
+		String texto=teclado.nextLine();
+		String texto2="";
+		
+		for (int i = texto.length(); i >=-1 ;i--) {
+			texto2=texto2.concat(texto.substring(i-1, i));
+		}
+		System.out.println(texto2);
+		
+	}
+
+}
