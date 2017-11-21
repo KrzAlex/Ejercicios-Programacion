@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS6 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		System.out.println("Inroduzca una frase");
+		String texto=teclado.nextLine();
+		System.out.println("Ahora se estan sustituyendo todos los \"si\" por un \"no\"");
+		
+		texto=texto.replaceAll("si", "no");
+		
+		System.out.println(texto);
+		
+	}
+
+}

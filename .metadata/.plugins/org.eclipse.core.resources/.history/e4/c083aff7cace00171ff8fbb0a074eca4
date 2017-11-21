@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosS5 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		String texto=teclado.nextLine();
+		String letra="";
+		
+		letra = texto.substring(0,1);
+		texto=texto.replaceFirst(texto.substring(0,1),texto.substring(texto.length()-1));
+		texto=texto.substring(0, texto.length()-1)+letra;
+		System.out.println(texto);
+	}
+
+}

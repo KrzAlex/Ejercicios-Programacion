@@ -20,16 +20,11 @@ public class EjerciciosS11 {
 		String texto=teclado.nextLine();
 
 		int comodin=0; 
-		while  (comodin < 1){
-			if (texto.length()>20) {
+		while  (texto.length()>20){
 				System.out.println("Por favor , Introduzca un texto de menos de 20 caracteres");
 				texto=teclado.nextLine();
-			}
-			if (texto.length()<260) {
-				comodin=1;
-			}
 		}
-		comodin=0;
+		
 		System.out.println(texto);
 		while (comodin < texto.length()) {
 			texto= texto.substring((texto.length()-1))+texto.substring(0,(texto.length()-1));
