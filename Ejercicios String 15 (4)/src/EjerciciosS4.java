@@ -30,6 +30,7 @@ public class EjerciciosS4 {
 			if (" ".indexOf(nombre1.substring(i, i+1))!=-1) {
 				nom1=nombre1.substring(0, i);
 				ap1=nombre1.substring(i);
+				break;
 			}
 			
 		}
@@ -37,6 +38,7 @@ public class EjerciciosS4 {
 			if (" ".indexOf(nombre2.substring(i, i+1))!=-1) {
 				nom2=nombre2.substring(0, i);
 				ap2=nombre2.substring(i);
+				break;
 			}
 			
 		}
