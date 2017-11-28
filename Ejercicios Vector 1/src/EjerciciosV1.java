@@ -20,8 +20,6 @@ public class EjerciciosV1 {
 		int iguales=0;
 		for (int i = 0; i < vector.length; i++) {
 			vector[i]=(int)(Math.random()*21)-10;
-		}
-		for (int i = 0; i < vector.length; i++) {
 			media=media+vector[i];
 		}
 		media=media/20;

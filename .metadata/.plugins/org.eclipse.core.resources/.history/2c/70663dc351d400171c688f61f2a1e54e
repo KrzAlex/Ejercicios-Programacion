@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class EjerciciosV4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int vector[][]=new int [5][5];
+		int mayor=0,ubiM=0,menor=0,ubim=0;
+		for (int i = 0; i < vector.length; i++) {
+			for (int j = 0; j < vector[0].length; j++) {
+				vector[i][j]=(int)(Math.random()*200)-100;
+			}
+		}
+		
+		
+		
+		
+		
+	}
+
+}

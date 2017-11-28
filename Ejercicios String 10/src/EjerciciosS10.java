@@ -18,7 +18,7 @@ public class EjerciciosS10 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclado= new Scanner(System.in);
-		String abecedario="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+		String abecedario="ABCDEFGHIJKLMNÃ‘OPQRSTUVWXYZ";
 		int matriz[]=new int[27];
 		System.out.println("Introduzca un texto");
 		String texto=teclado.nextLine();

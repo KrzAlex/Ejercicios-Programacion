@@ -25,7 +25,7 @@ public class EjerciciosS5 {
 		Thread.sleep(1000);
 		letra = texto.substring(0,1);
 		texto=texto.replaceFirst(texto.substring(0,1),texto.substring(texto.length()-1));
-		texto=texto.substring(0, texto.length()-1)+letra;
+		texto=texto.substring(0, texto.length()-1)+letra;		
 		System.out.print("La palabra resultante es: ");
 		System.out.println(texto);
 		
