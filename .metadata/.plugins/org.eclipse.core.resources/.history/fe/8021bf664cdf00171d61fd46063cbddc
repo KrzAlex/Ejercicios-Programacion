@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class poker {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		String baraja="1C2C3C4C5C6C7C8C9CJCQCKCAC" //Todas las cartas de la baraja
+				+ "1D2D3D4D5D6D7D8D9DJDQDKDAD"
+				+ "1T2T3T4T5T6T7T8T9TJTQTKTAT"
+				+ "1P2P3P4P5P6P7P8P9PJPQPKPAP";
+		
+	}
+
+}

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * @author usuario
- *
+ * @version 2.0
  */
 public class Ejercicio33 {
 
@@ -21,8 +21,16 @@ public class Ejercicio33 {
 		for (int i = 0; i < alumno.length; i++) {
 			alumno[i] = teclado.nextLine();
 		}
+		
+		imprimir(alumno);
+	
+	}
+	
+	public static String imprimir(String alumno[]){
+		String comodin="";
 		for (int i = 0; i < alumno.length; i++) {
-			System.out.println(alumno[i]);
+		System.out.println(alumno[i]);
 		}
+		return comodin;		
 	}
 }

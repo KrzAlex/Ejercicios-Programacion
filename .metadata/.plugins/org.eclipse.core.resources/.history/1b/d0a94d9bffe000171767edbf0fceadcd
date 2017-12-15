@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio32 {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Ejercicio 32");
+		int x = teclado.nextInt();
+		int a =1; int cont=0;
+		while (a < x) {
+			if (x % a ==0) {
+				cont++;
+			}
+		a++;
+		}
+		primo(x,0,0);
+		Thread.sleep(1000);
+		multiplicacion(x,0,0);
+		
+	}
+
+
+	public static String primo(int x,int a, int cont){
+		String comodin="";
+		if (cont ==0) {
+			System.out.println("El " + x + " es primo");
+		}else{
+			System.out.println("El " + x + " no es primo");
+		}
+		return comodin;
+	}
+
+	public static String multiplicacion(int x,int a, int cont){
+		String comodin="";
+		System.out.println("Tabla de multiplicar");
+		while (a <=10) {
+			cont = x * a;
+			System.out.println(x + "*" + a + "=" + cont);
+			a++;
+		}
+		return comodin;
+	}
+}

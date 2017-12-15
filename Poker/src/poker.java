@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class poker {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		String baraja="1C2C3C4C5C6C7C8C9CJCQCKCAC" //Todas las cartas de la baraja
+				+ "1D2D3D4D5D6D7D8D9DJDQDKDAD"
+				+ "1T2T3T4T5T6T7T8T9TJTQTKTAT"
+				+ "1P2P3P4P5P6P7P8P9PJPQPKPAP";
+		System.out.println("Buenas, estas probando el Poker version 0.0.1");
+		Thread.sleep(1000);
+		System.out.println("---------------------------------------------");
+		Thread.sleep(1000);
+		System.out.println("Cuantos jugadores a aparte de ti van a jugar? (Como max 4)");
+		int jugadoresNPC=teclado.nextInt();
+		while (jugadoresNPC>4) {
+			System.out.println("Demasiados jugadores. porfavor, no supere el limite de 4");
+			jugadoresNPC=teclado.nextInt();
+		}
+		String jugadores[][]=new String[(1+jugadoresNPC)][1];
+		String mano[][]=new String[(1+jugadoresNPC)][2];
+		Thread.sleep(1000);
+		System.out.println("Cuanto desea apostar?");
+		int apuesta0=teclado.nextInt();
+		int comodin;
+		jugadores[0][0]=Integer.toString(apuesta0);
+		for (int i = 1; i < jugadores.length; i++) {
+			jugadores[i][0]=Integer.toString(apuesta0*2);
+		}
+		
+		
+		
+		
+		
+	}
+
+}

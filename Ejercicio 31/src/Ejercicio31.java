@@ -19,9 +19,21 @@ public class Ejercicio31 {
 		System.out.println("Ejercicio 31");
 		int x1= teclado.nextInt();
 		int x2= teclado.nextInt();
-		int comodin=0;
 		int x3 =0;
-		int suma=0, resta=0, multiplicacion=0, dividir=0;
+		String comodin=verificador(0, x1, x2);
+		x1=Integer.parseInt(comodin.substring(0, comodin.indexOf(" ")));
+		x2=Integer.parseInt(comodin.substring((comodin.indexOf(" ")+1)));
+		menu(x2);
+		x3= teclado.nextInt();
+		x3=Integer.parseInt(comprobante(x3));
+		operaciones(x3, x1, x2, 0);
+		
+	}
+	
+	
+	public static String verificador(int comodin, int x1, int x2){
+		Scanner teclado= new Scanner(System.in);
+		String comodin2="";
 		while (comodin<1) {
 			if (x2 > x1) {
 				System.out.println("Por favor, el primer numero debe ser mayor que el segundo");
@@ -32,35 +44,85 @@ public class Ejercicio31 {
 				comodin++;
 			}
 		}
+		comodin2=x1+" "+x2;
+		return comodin2;
+		
+	}
+	
+	public static String menu(int x2){
+		String comodin="";
 		System.out.println("Pulse 1 para sumar");
 		System.out.println("Pulse 2 para restar");
 		System.out.println("Pulse 3 para multiplicar");
 		if (x2 !=0) {
 			System.out.println("Pulse 4 para dividir");
 		}
-		x3= teclado.nextInt();
-		comodin=0;
+		return comodin;
+	}
+	
+	public static String comprobante(int x3){
+		Scanner teclado= new Scanner(System.in);
+		String comodin="";
+		while (x3>4 || x3<0) {
+			System.out.println("Por favor Introduzca un numero valido");
+			x3=teclado.nextInt();
+		}
+		
+		comodin=Integer.toString(x3);
+		return comodin;
+	}
+	
+	
+	
+	
+	
+	public static String operaciones(int x3, int x1, int x2, int comodin){
+		String comodin2="";
 		switch (x3 + comodin) {
 		case 1:
-			comodin= x1 +x2;
-			System.out.println(x1 + "+" + x2 + "=" + comodin);
+			suma(x3, x1, x2, comodin);
 			break;
 		case 2:
-			comodin= x1 - x2;
-			System.out.println(x1 + "-" + x2 + "=" + comodin);
+			resta(x3, x1, x2, comodin);
 			break;
 		case 3:
-			comodin= x1 * x2;
-			System.out.println(x1 + "*" + x2 + "=" + comodin);
+			multiplicacion(x3, x1, x2, comodin);
 			break;
 		case 4:
-			comodin= x1 / x2;
-			System.out.println(x1 + "/" + x2 + "=" + comodin);
+			division(x3, x1, x2, comodin);
 			break;
 
 		default:
 			break;
 		}
+		return comodin2;
 	}
-
+	
+	public static String suma(int x3, int x1, int x2, int comodin){
+		String comodin2="";
+		comodin= x1 +x2;
+		System.out.println(x1 + "+" + x2 + "=" + comodin);
+		return comodin2;
+	}
+	
+	public static String resta(int x3, int x1, int x2, int comodin){
+		String comodin2="";
+		comodin= x1 - x2;
+		System.out.println(x1 + "-" + x2 + "=" + comodin);
+		return comodin2;
+	}
+	
+	public static String multiplicacion(int x3, int x1, int x2, int comodin){
+		String comodin2="";
+		comodin= x1 * x2;
+		System.out.println(x1 + "*" + x2 + "=" + comodin);
+		return comodin2;
+	}
+	
+	public static String division(int x3, int x1, int x2, int comodin){
+		String comodin2="";
+		comodin= x1 / x2;
+		System.out.println(x1 + "/" + x2 + "=" + comodin);
+		return comodin2;
+	}
 }

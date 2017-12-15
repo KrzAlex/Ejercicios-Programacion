@@ -19,7 +19,7 @@ public class EjerciciosS9Op2 {
 		Scanner teclado=new Scanner(System.in);
 		String codigo;
 		int comodin=0;
-		int año;
+		int aÃ±o;
 		int bucle2=0;
 		int bucle=0;
 		String sexo;
@@ -34,7 +34,7 @@ public class EjerciciosS9Op2 {
 		String matriz[]= new String [50];
 		System.out.println("Los codigos deben ser asi:");
 		Thread.sleep(1000);
-		System.out.println("Los primer 4 digitos es el año entre 1990-1995");
+		System.out.println("Los primer 4 digitos es el aï¿½o entre 1990-1995");
 		Thread.sleep(1000);
 		System.out.println("El quinto digito si es hombre o mujer");
 		Thread.sleep(1000);
@@ -60,9 +60,9 @@ public class EjerciciosS9Op2 {
 				break;
 			}
 			codigo=codigo.toUpperCase();
-			año=Integer.parseInt(codigo.substring(0, 4));
-			while (!(año>=1990 && año<=1995) ) {
-				System.out.println("El año del codigo esta incorrecto, por favor vuelva a introducir el codigo");
+			aÃ±o=Integer.parseInt(codigo.substring(0, 4));
+			while (!(aÃ±o>=1990 && aÃ±o<=1995) ) {
+				System.out.println("El aï¿½o del codigo esta incorrecto, por favor vuelva a introducir el codigo");
 				comodin++;
 				break;
 			}

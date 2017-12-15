@@ -20,23 +20,23 @@ public class EjerciciosS9 {
 		System.out.println("Por favor, introduzca el numero de personas que vas a introducir");
 		int personas= teclado.nextInt();
 		Thread.sleep(1000);
-		int año=0;
+		int aÃ±o=0;
 		String sexo="";
 		int curso=0;
 		String extra;
 		String matriz[]= new String [personas];
 		for (int i = 0; i < matriz.length; i++) {
-			System.out.println("Introduzca el año de la persona " +(i+1));
-			año=teclado.nextInt();
-			if (año==00000000) {
+			System.out.println("Introduzca el aï¿½o de la persona " +(i+1));
+			aÃ±o=teclado.nextInt();
+			if (aÃ±o==00000000) {
 				break;
 			}
 			Thread.sleep(1000);
-			while (año<1990||año>1995) {
-				System.out.println("Por favor que al año de la persona se entre 1990 y 1995");
-				año=teclado.nextInt();
+			while (aÃ±o<1990||aÃ±o>1995) {
+				System.out.println("Por favor que al aï¿½o de la persona se entre 1990 y 1995");
+				aÃ±o=teclado.nextInt();
 			}
-			matriz[i]=matriz[i] + año;
+			matriz[i]=matriz[i] + aÃ±o;
 			System.out.println("La persona "+(i+1)+" es Hombre (H) o Mujer (M)");
 			sexo=teclado.next();
 			while (!(sexo.equals("H")||sexo.equals("h")||sexo.equals("M")||sexo.equals("m"))) {
@@ -49,7 +49,7 @@ public class EjerciciosS9 {
 			Thread.sleep(1000);
 			System.out.println("Introduzca el curso de la persona "+(i+1));
 			curso=teclado.nextInt();
-			while (!(año<0||año>2)) {
+			while (!(aÃ±o<0||aÃ±o>2)) {
 				Thread.sleep(1000);
 				System.out.println("Por favor introduze si esta en el curso 1 o en el curso 2");
 				curso=teclado.nextInt();
