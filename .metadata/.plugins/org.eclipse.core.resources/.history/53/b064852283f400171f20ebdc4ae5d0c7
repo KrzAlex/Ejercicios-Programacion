@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Bolas {
+	public String color;
+	public Integer bolasComidas;
+	public Integer maxBolas;
+	public Integer numTragabolas;
+	
+	
+	public Integer getNumTragabolas() {
+		return numTragabolas;
+	}
+	public void setNumTragabolas(Integer numTragabolas) {
+		this.numTragabolas = numTragabolas;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public int getBolasComidas() {
+		return bolasComidas;
+	}
+	public void setBolasComidas() {
+		this.bolasComidas = 0;
+	}
+	public int getMaxBolas() {
+		return maxBolas;
+	}
+	public void setMaxBolas(int maxBolas) {
+		this.maxBolas = maxBolas;
+	}
+	
+	public Bolas(String color, int bolasComidas, int maxBolas,) {
+		this.color = color;
+		this.bolasComidas = bolasComidas;
+		this.maxBolas = maxBolas;
+	}
+		
+}

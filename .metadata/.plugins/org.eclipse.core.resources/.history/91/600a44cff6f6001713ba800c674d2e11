@@ -1,0 +1,25 @@
+import java.io.IOException;
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class pruebas {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("hola");
+		try {
+		     r.exec("shutdown -f");
+		    } catch (IOException e1) {
+		     // TODO Auto-generated catch block
+		     e1.printStackTrace();
+		    } 
+	}
+}

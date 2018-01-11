@@ -22,7 +22,6 @@ public class Ejercicio37 {
 		
 	}
 	public static void matrizorig (int matriz[][]){
-		int matriz2[][]=matriz;
 		for (int fil = 0; fil < matriz.length; fil++) {
 			for (int co = 0; co < matriz[0].length; co++) {
 				matriz[fil][co]= (int) (Math.random()*100)+1;

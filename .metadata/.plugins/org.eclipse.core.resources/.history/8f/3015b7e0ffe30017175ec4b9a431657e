@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Hora {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int hora;
+		int min;
+		int segundo;
+		
+	}
+
+}

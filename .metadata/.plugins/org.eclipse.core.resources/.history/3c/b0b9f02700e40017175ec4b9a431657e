@@ -1,0 +1,13 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Hora {
+	int hora;
+	int min;
+	int seg;
+}

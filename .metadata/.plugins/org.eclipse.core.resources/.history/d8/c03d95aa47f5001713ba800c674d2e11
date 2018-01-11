@@ -1,0 +1,136 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Tragabolas {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner (System.in);
+		System.out.println("Bienvenidos al juego Tragabolas.");
+		System.out.println("Que desea hacer?");
+		Bolas bolas=new Bolas("0",0,0,0);
+		int opcion=10;
+		int tragabolas=0;
+		while(opcion!=0){
+			if(bolas.getNumTragabolas()==0){
+				System.out.println("1: Crear Tragabolas");
+				System.out.println("0: Fin");
+				opcion=teclado.nextInt();
+				bolas=menu1(opcion);
+
+			}else {
+				System.out.println("2: Darle de comer");
+				System.out.println("3: Hacerle dormir");
+				System.out.println("4: Ver estado");
+				System.out.println("0: Fin");
+				opcion=teclado.nextInt();
+				menu(opcion, bolas);
+			}
+		
+		}
+	}
+	public static Bolas menu1(int opcion){
+		String color="";
+		int maxBolas=0;
+		Bolas bolas=new Bolas("0",0,0,0);
+		if (opcion==1){
+		Scanner teclado=new Scanner(System.in);
+		
+		System.out.println("De que color desea que sea su tragabolas?");
+		color=teclado.nextLine();
+		System.out.println("Cuantas bolas puede comer como maximo?");
+		maxBolas=teclado.nextInt();
+		verificadorCol(color);
+		
+		bolas=new Bolas(color,0,maxBolas,1);
+		
+		return bolas;
+		}
+		return bolas;
+	}
+	public static void menu(int opcion,Bolas bolas) throws InterruptedException{
+		Scanner teclado=new Scanner(System.in);
+		
+		switch (opcion) {
+		case 2:
+			bolas=comer(bolas);
+			
+			break;
+		case 3:
+			bolas=trotar(bolas);
+			
+			
+			break;
+		case 4:
+			status(bolas);
+			
+			break;
+		default:
+			System.out.println("Por vafor introduzca un valor posible");
+			System.out.println();
+			break;
+		}
+		
+		
+	}
+	public static Bolas comer(Bolas bolas) throws InterruptedException{
+		Scanner teclado=new Scanner(System.in);
+		int comodin=0;
+		System.out.println("Cuantas bolas desea darle");
+		Thread.sleep(1000);
+		comodin=teclado.nextInt();
+		while (comodin>(bolas.getMaxBolas()-bolas.getBolasComidas())) {
+			System.out.println("El tragabolas no puede comer tanto");
+			System.out.println("Por favor introduzca un numero de bolas que pueda comer");
+			comodin=teclado.nextInt();
+		}
+		System.out.println("El tragabolas se va a comer "+comodin+" bolas");
+		
+		return bolas;
+	}
+	public static Bolas trotar(Bolas bolas) throws InterruptedException{
+		Thread.sleep(1000);
+		if (bolas.getBolasComidas()>0) {
+			Thread.sleep(1000);
+			System.out.println("Mirame, estoy trotando");
+			Thread.sleep(1000);
+			
+			return bolas;
+		} else {
+			Thread.sleep(1000);
+			System.out.println("No puedo trotar, tengo hambre");
+			Thread.sleep(1000);
+		}
+		return bolas;
+	}
+	public static void status(Bolas bolas) throws InterruptedException{
+		System.out.println("Tu tragabolas es de color: "+bolas.getColor());
+		System.out.println("Se ha comido "+bolas.getBolasComidas()+" bolas");
+		System.out.println();
+		Thread.sleep(1000);
+	}
+	
+	
+	public static void verificadorCol(String color){
+		Scanner teclado=new Scanner(System.in);
+		color=color.toLowerCase();
+		while (!(color.equals("azul")||color.equals("amarillo")||color.equals("rojo")||color.equals("verde"))) {
+			System.out.println("Los Tragabolas solo pueden ser azules(azul), amarillos(amarillo), rojos(rojo) o verdes(verde)");
+			color=teclado.nextLine();
+			color=color.toLowerCase();
+		}
+	}
+	
+
+}

@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Reloj {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		System.out.println("Introduce la Hora");
+		int mihora=teclado.nextInt();
+		System.out.println("Introdue los Minutos");
+		int mimin=teclado.nextInt();
+		System.out.println("Introduce los segundos");
+		int miseg=teclado.nextInt();
+		
+		Hora mihora= new Hora(mihora, mimin, miseg);
+		
+		
+	}
+	public static void operacion(int hora, int min, int seg) throws InterruptedException{
+		while (hora<25){
+			if (seg==60) {
+				min++;
+				seg=0;
+			}
+			if (min==60) {
+				hora++;
+				min=0;
+			}
+			if (hora==24) {
+				hora=0;
+			}
+			seg++;
+			Thread.sleep(1000);
+		}
+			
+	}
+
+}

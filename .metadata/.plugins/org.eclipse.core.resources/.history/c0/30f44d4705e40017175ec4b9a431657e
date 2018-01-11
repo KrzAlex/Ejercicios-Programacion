@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Reloj {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		System.out.println("Introduce la Hora");
+		int mihora=teclado.nextInt();
+		System.out.println("Introdue los Minutos");
+		int mimin=teclado.nextInt();
+		System.out.println("Introduce los segundos");
+		int miseg=teclado.nextInt();
+		
+		Hora mihora= new Hora(mihora,mimin,miseg);
+		
+		
+	}
+
+}

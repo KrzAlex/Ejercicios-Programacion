@@ -1,0 +1,22 @@
+1513622720013	Extract local variable 'existedepart'
+1513622769231	Extract local variable 'noexistedepart'
+1513622819417	Convert local variable 'noexistedepart' to field
+1513622835017	Convert local variable 'existedepart' to field
+1513622893951	Extract local variable 'depar_error'
+1513622909005	Convert local variable 'depar_error' to field
+1513623185472	Rename field 'depar_error'
+1513623202024	Rename field 'existedepart'
+1513623214301	Rename field 'noexistedepart'
+1513623465748	Extract method 'insert_Dep'
+1513623500161	Extract method 'consult'
+1513623527602	Extract method 'delete'
+1513623549645	Extract method 'modify'
+1513624036194	Extract method 'consult_dep_Alta'
+1513624137891	Extract method 'altadepart'
+1513624232146	Extract method 'consuldepart'
+1513624252800	Extract method 'borradepart'
+1513624269867	Extract method 'modifdepart'
+1513624619245	Rename method 'altadepart'
+1513624641085	Rename method 'consuldepart'
+1513624654782	Rename method 'borradepart'
+1513624667433	Rename method 'modifdepart'

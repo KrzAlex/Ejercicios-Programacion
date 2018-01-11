@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Reloj {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner (System.in);
+		int mihora,mimin,miseg;
+		System.out.println("Introduce la Hora");
+		mihora=teclado.nextInt();
+		System.out.println("Introdue los Minutos");
+		mimin=teclado.nextInt();
+		System.out.println("Introduce los segundos");
+		miseg=teclado.nextInt();
+		
+		Hora tiempo=new Hora(mihora, mimin, miseg);
+		System.out.println(tiempo);
+		System.out.println(tiempo.getHora()+":"+tiempo.getMin()+":"+tiempo.getSeg());
+		System.out.println("Desea covertirlo todo a segundos?");
+		String comodin="";
+		comodin=teclado.nextLine();
+		if (comodin=="S"||comodin=="s") {
+			comodin=conversor(tiempo.getHora(),tiempo.getMin(),tiempo.getSeg());
+			System.out.println("El total de segundos es "+comodin);
+		}
+		System.out.println("Ahora se ejecuta el reloj");
+		operacion(tiempo.getHora(),tiempo.getMin(),tiempo.getSeg());
+		
+	}
+	public static String operacion(int hora, int min, int seg) throws InterruptedException{
+		String comodin="";
+		while (hora<25){
+			if (seg==60) {
+				min++;
+				seg=0;
+			}
+			if (min==60) {
+				hora++;
+				min=0;
+			}
+			if (hora==24) {
+				hora=0;
+			}
+			seg++;
+			Thread.sleep(1000);
+			System.out.println(hora+":"+min+":"+seg);
+		}
+		return comodin;	
+	}
+	public static String conversor(int hora, int min, int seg){
+		String convertido;
+		int total=0;
+		total=hora*60+(min);
+		total=total*60+(seg);
+		convertido=Integer.toString(total);
+		return convertido;
+	}
+}
