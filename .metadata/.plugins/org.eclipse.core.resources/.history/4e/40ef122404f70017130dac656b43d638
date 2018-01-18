@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Probando {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("Que dia");
+		int dia=teclado.nextInt();
+		System.out.println("Que mes");
+		int mes=teclado.nextInt();
+		System.out.println("Que año");
+		int año=teclado.nextInt();
+		Fecha meses=new Fecha(dia, mes, año)
+
+		
+	}
+
+}

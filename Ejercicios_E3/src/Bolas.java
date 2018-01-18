@@ -31,7 +31,7 @@ public class Bolas {
 		return bolasComidas;
 	}
 	public void setBolasComidas(Integer numero) {
-		this.bolasComidas = this.bolasComidas+numero;
+		this.bolasComidas = bolasComidas+numero;
 	}
 	public int getMaxBolas() {
 		return maxBolas;

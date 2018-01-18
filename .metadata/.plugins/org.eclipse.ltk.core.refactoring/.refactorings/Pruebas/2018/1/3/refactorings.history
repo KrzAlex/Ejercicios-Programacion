@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void TransformadorMeses()&apos; from &apos;Fecha.impresion2F()&apos; to &apos;Fecha&apos;&#x0D;&#x0A;- Original project: &apos;Pruebas&apos;&#x0D;&#x0A;- Method name: &apos;TransformadorMeses&apos;&#x0D;&#x0A;- Destination type: &apos;Fecha&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;TransformadorMeses&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;{Fecha.java" name="TransformadorMeses" replace="false" selection="1833 682" stamp="1516030582816" version="1.0" visibility="2"/>
+</session>

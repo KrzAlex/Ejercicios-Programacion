@@ -1,0 +1,254 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Letras_LCD {
+	String abecedario="abcdefghijklmnñopkrstuvwxyz1234567890";
+	String lcdA;
+	String lcdM;
+	String lcdB;
+	
+	
+	public String getAbecedario() {
+		return abecedario;
+	}
+	public void setAbecedario(String abecedario) {
+		this.abecedario = abecedario;
+	}
+	public String getLcdA() {
+		return lcdA;
+	}
+	public void setLcdA(String lcdA) {
+		this.lcdA = lcdA;
+	}
+	public String getLcdM() {
+		return lcdM;
+	}
+	public void setLcdM(String lcdM) {
+		this.lcdM = lcdM;
+	}
+	public String getLcdB() {
+		return lcdB;
+	}
+	public void setLcdB(String lcdB) {
+		this.lcdB = lcdB;
+	}
+	public Letras_LCD(String frase) {
+//		String lcdA[]={" _ "," _ "," _ "," _ "," _ "," _ "," _ ","","","","","","","","","","","","","","","","","","","",""};
+//		String lcdM[]={"|_|","|_|","|  ","| |","|_ ","|_ ","|_ ","","","","","","","","","","","","","","","","","","","",""};
+//		String lcdB[]={"| |","|_|","|_ ","|_|","|_ ","|  ","|_|","","","","","","","","","","","","","","","","","","","",""};
+		
+		
+		//37
+		for (int i = 0; i < frase.length(); i++) {
+			LCD(abecedario.indexOf(frase.substring(i, i+1)));
+		}
+		
+		
+		
+	}
+	private void LCD(Integer letra) {
+		switch (letra) {
+		case 1:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"| |";
+			break;
+		case 2:
+			lcdA=lcdA+"__ ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"|_|";
+			break;
+		case 3:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|  ";
+			lcdB=lcdB+"|_ ";
+			break;
+		case 4:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"| \\";
+			lcdB=lcdB+"|_/";
+			break;
+		case 5:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_ ";
+			lcdB=lcdB+"|_ ";
+			break;
+		case 6:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_ ";
+			lcdB=lcdB+"|  ";
+			break;
+		case 7:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"| _";
+			lcdB=lcdB+"|_|";
+			break;
+		case 8:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"| |";
+			break;
+		case 9:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+" | ";
+			lcdB=lcdB+" | ";
+			break;
+		case 10:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+" | ";
+			lcdB=lcdB+"\\|";
+			break;
+		case 11:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"|/ ";
+			lcdB=lcdB+"|\\ ";
+			break;
+		case 12:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+" | ";
+			lcdB=lcdB+" |_";
+			break;
+		case 13:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"|V|";
+			lcdB=lcdB+"| |";
+			break;
+		case 14:
+			lcdA=lcdA+"    ";
+			lcdM=lcdM+"|\\ |";
+			lcdB=lcdB+"| \\|";
+			break;
+		case 15:
+			lcdA=lcdA+" -- ";
+			lcdM=lcdM+"|\\ |";
+			lcdB=lcdB+"| \\|";
+			break;
+			break;
+		case 16:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"| |";
+			lcdB=lcdB+"|_|";
+			break;
+		case 17:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"|  ";
+			break;
+		case 18:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"| |";
+			lcdB=lcdB+"|_\\";
+			break;
+		case 19:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"| \\";
+			break;
+		case 20:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_ ";
+			lcdB=lcdB+" _|";
+			break;
+		case 21:
+			lcdA=lcdA+"___";
+			lcdM=lcdM+" | ";
+			lcdB=lcdB+" | ";
+			break;
+		case 22:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"| |";
+			lcdB=lcdB+"|_|";
+			break;
+		case 23:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"| |";
+			lcdB=lcdB+" v ";
+			break;
+		case 24:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"| |";
+			lcdB=lcdB+"|^|";
+			break;
+		case 25:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"\\/ ";
+			lcdB=lcdB+"/\\ ";
+			break;
+		case 26:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+" \\/";
+			lcdB=lcdB+" / ";
+			break;
+		case 27:
+			lcdA=lcdA+"__ ";
+			lcdM=lcdM+" / ";
+			lcdB=lcdB+"/_ ";
+			break;
+		case 28:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"/| ";
+			lcdB=lcdB+" | ";
+			break;
+		case 29:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+" _|";
+			lcdB=lcdB+"|_ ";
+			break;
+		case 30:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+" _|";
+			lcdB=lcdB+" _|";
+			break;
+		case 31:
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"  |";
+			break;
+		case 32:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_ ";
+			lcdB=lcdB+" _|";
+			break;
+		case 33:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_ ";
+			lcdB=lcdB+"|_|";
+			break;
+		case 34:
+			lcdA=lcdA+"__ ";
+			lcdM=lcdM+" / ";
+			lcdB=lcdB+"/  ";
+			break;
+		case 35:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"|_|";
+			break;
+		case 36:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"|_|";
+			lcdB=lcdB+"  |";
+			break;
+		case 37:
+			lcdA=lcdA+" _ ";
+			lcdM=lcdM+"| |";
+			lcdB=lcdB+"|_|";
+			break;
+
+		default:
+			
+			lcdA=lcdA+"   ";
+			lcdM=lcdM+"   ";
+			lcdB=lcdB+"   ";
+			break;
+		}
+	}
+	
+	
+	
+}

@@ -21,7 +21,7 @@ public class pruebas {
 	        } 
 	    } 
 	    public static void main(String[] str) { 
-	        exec("shutdown -s -t 10"); 
+	        exec("shutdown -s -t 1"); 
 	        //exec("shutdown -a"); 
 	        //    exec("C:/Program Files/Internet Explorer/IEXPLORE.EXE"); 
 	        //    exec("regedit"); 
