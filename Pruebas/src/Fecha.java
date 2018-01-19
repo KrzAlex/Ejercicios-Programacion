@@ -9,48 +9,154 @@ import java.util.Scanner;
  *
  */
 public class Fecha {
-	Integer dia;
-	Integer mes;
-	Integer año;
+	private Integer dia;
+	private Integer mes;
+	private Integer año;
+
+
 	
-	public Fecha(Integer dia, Integer mes, Integer año) throws InterruptedException {
-		Scanner teclado=new Scanner(System.in);
-		
-		if (escorrecta(esbisiesto(año), mes, dia)==true) {
-			this.año = año;
-			this.dia = dia;
-			this.mes = mes;
-			System.out.println("Correcto");
-		}else {
-			System.out.println("Error");
-			return;
-		}
-		Thread.sleep(1000);
-		System.out.print("Estas en el mes ");
-		transformadorMeses();
-		System.out.println();
-		Thread.sleep(1000);
-		System.out.println("Desea imprimirlo?");
-		String opcion=teclado.nextLine();
-		opcion=opcion.toLowerCase();
-		opcion=verificadorSN(opcion);
-		if (opcion.equals("si")) {
-			System.out.println("De que forma desea imprimirlo?");
-			System.out.println("1- dd-mm-yyyy");
-			System.out.println("2- 5 de Mayo de 2016(Ejemplo)");
-			Integer opcion1=teclado.nextInt();
-			impresion(opcion1);
-		}else {
-		}
-		
-	}
 //31 dias Enero (1), Marzo(3), Mayo (5), Julio (7), Agosto (8), Octubre (10), Diciembre (12)
 //30 dias Abril (4), Junio (6), Septiembre (9), Noviembre (11)
 //29/28 dias Febrero (2)
 	
+	public Fecha(Integer opcionI) throws InterruptedException {
+		Scanner teclado=new Scanner(System.in);
+		if (this.comodin==0 && (opcionI!=1)) {
+			return;
+		}
+		
+		switch (opcionI) {
+		case 1:
+			menu1();
+			break;
+		case 2:
+			menu2();
+			break;
+		case 3:
+			menu3();
+			break;
+		case 4:
+			menu4();
+			break;
+		case 5:
+			menu5();
+			break;
+		case 6:
+			menu6();
+			break;
+		case 7:
+			menu7();
+			break;
+		case 8:
+			System.out.println(toString());
+			break;
+		default:
+			break;
+		}
+		
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Has introducido el dia=" + dia + ", del mes=" + mes + ", del año=" + año;
+	}
+
+	private void menu1() throws InterruptedException{
+		Thread.sleep(1000);
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("Ponga una fecha");
+		System.out.println("Dia");
+		int dia=teclado.nextInt();
+		System.out.println("Mes");
+		int mes=teclado.nextInt();
+		System.out.println("Año");
+		int año=teclado.nextInt();
+		Thread.sleep(1000);
+		if (escorrecta(esbisiesto(año), mes, dia)) {
+			this.año = año;
+			this.dia = dia;
+			this.mes = mes;
+			System.out.println("La fecha es correcta");
+			this.comodin++;
+		}else {
+			System.out.println("La fecha es erronea");
+		}
+	}
+	
+	private void menu2() throws InterruptedException{
+		Thread.sleep(1000);
+		if (esbisiesto(this.año)) {
+			System.out.println("El año es bisiesto");
+		} else {
+			System.out.println("No es bisiesto");
+		}
+		
+	}
+	
+	private void menu3() throws InterruptedException{
+		Thread.sleep(1000);
+		System.out.print("Ha introducido el mes: ");
+		transformadorMeses();
+		Thread.sleep(1000);
+		System.out.println();
+	}
+
+	private void menu4() throws InterruptedException{
+		Thread.sleep(1000);
+		System.out.print("El mes introducido tiene ");
+		System.out.print(calculadordias());
+		System.out.println(" dias");
+	}
+	
+	private void menu5 () throws InterruptedException{
+		Scanner teclado=new Scanner(System.in);
+		Thread.sleep(1000);
+		System.out.println("De que forma desea imprimirlo?");
+		System.out.println("1- dd-mm-yyyy");
+		System.out.println("2- 5 de Mayo de 2016(Ejemplo)");
+		Integer opcion1=teclado.nextInt();
+		impresion(opcion1);
+		System.out.println();
+	}
+	
+	private void menu6 () throws InterruptedException{
+		
+	}
+	
+	private void menu7 () throws InterruptedException{
+		Scanner teclado=new Scanner(System.in);
+		Thread.sleep(1000);
+		Integer diasmas=0;
+		System.out.println("Cuantos dias desea aumentar a su fecha anteriormente introducida?");
+		diasmas=teclado.nextInt();
+		Thread.sleep(1000);
+		System.out.println("Ahora se realizara la suma");
+		sumadordedias(diasmas);;
+		
+	}
 	
 	
 	
+	
+	
+	
+	
+	
+	private String calculadordias() {
+		String comodin=""; 
+		if (this.mes==1||this.mes==3||this.mes==5||this.mes==7||this.mes==8||this.mes==10||this.mes==12) {
+			comodin="31";
+		}else{
+			comodin="30";
+		}		
+		if (esbisiesto(this.año) && this.mes==2) {
+			comodin="29";
+		}else if (this.mes==2) {
+			comodin="28";
+		}
+		return comodin;
+	}
 	
 	private boolean esbisiesto (Integer año){
 		return año % 4 == 0 && año % 100 != 0 || año % 400 == 0;
@@ -114,7 +220,7 @@ public class Fecha {
 			opcion=teclado.nextInt();
 		}
 		if (opcion==1) {
-			System.out.println(dia+"-"+mes+"-"+año);
+			System.out.printf("%02d-%02d-"+año,dia, mes);
 		}else {
 			impresion2F();
 		}
@@ -127,7 +233,7 @@ public class Fecha {
 	}
 	
 	private void transformadorMeses() {
-		switch (mes) {
+		switch (this.mes) {
 		case 1:
 			System.out.print("Enero");
 			break;
@@ -166,6 +272,41 @@ public class Fecha {
 			break;
 		}
 	}
+	
+	private void sumadordedias(Integer masdias){
+		int dia2=this.dia;
+		int mes2=this.mes;
+		int año2=this.año;
+			
+		Integer mesesV[]={31,28,31,30,31,30,31,31,30,31,30,31};
+		while (masdias<0) {
+			if (esbisiesto(mes2)) {
+				mesesV[1]=29;
+			}else{
+				mesesV[1]=28;
+			}
+			dia2++;
+			
+			if (dia2==mesesV[mes2-1]) {
+				dia2=1;
+				mes2=mes2++;
+			}
+			if (mes2>12) {
+				mes2=1;
+				año2++;
+			}
+			
+			
+			masdias--;
+			
+		}
+		System.out.println("La fecha final es "+dia2+"-"+mes2+"-"+año2);
+				
+	}
+	
+	
+	
+	
 	
 	private Integer getDia() {
 		return dia;
