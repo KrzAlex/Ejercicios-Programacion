@@ -1,0 +1,30 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CalculadoraTest {
+	
+
+	@Test
+	public void testSuma() {
+		Calculadora suma=new Calculadora(20, 10);
+		int result = suma.suma();
+		assertEquals(30, result);
+	}
+
+	@Test
+	public void testResta() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testMultiplicacion() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDivision() {
+		fail("Not yet implemented");
+	}
+
+}

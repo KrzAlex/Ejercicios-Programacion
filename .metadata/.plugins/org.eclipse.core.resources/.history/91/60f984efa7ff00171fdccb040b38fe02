@@ -1,0 +1,28 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class CalculadoraTest2 {
+
+	@Test
+	public void testResta() {
+		Calculadora suma = new Calculadora(20, 10);
+		int result = suma.resta();
+		assertEquals(10, result);
+	}
+
+	@Test
+	public void testResta2() {
+		Calculadora suma = new Calculadora(20, 10);
+		int result = suma.resta2();
+		assertEquals(30, result);
+	}
+
+	@Test
+	public void testDivision2() {
+		Calculadora suma = new Calculadora(20, 0);
+		int result = suma.division2();
+		assertNotNull(result);
+	}
+
+}

@@ -4,34 +4,36 @@ import org.junit.Test;
 
 public class CalculadoraTest {
 
-	
-	
 	@Test
 	public void testSuma() {
-		Calculadora calcu= new Calculadora(20, 10);
-		int resultado = calcu.suma();
-		assertEquals(30, resultado);
+		Calculadora suma = new Calculadora(20, 10);
+		int result = suma.suma();
+		assertEquals(30, result);
 	}
 
 	@Test
 	public void testResta() {
-		Calculadora calcu= new Calculadora(20, 10);
-		int resultado = calcu.resta();
-		assertEquals(10, resultado);
+		Calculadora suma = new Calculadora(20, 10);
+		int result = suma.resta();
+		assertEquals(10, result);
 	}
 
 	@Test
 	public void testMultiplicacion() {
-		Calculadora calcu= new Calculadora(20, 10);
-		int resultado = calcu.multiplicacion();
-		assertEquals(200, resultado);
+		Calculadora suma = new Calculadora(20, 10);
+		int result = suma.multiplicacion();
+		assertEquals(20, result);
 	}
 
 	@Test
 	public void testDivision() {
-		Calculadora calcu= new Calculadora(20, 10);
-		int resultado = calcu.division();
-		assertEquals(2, resultado);
+		try{
+		Calculadora suma = new Calculadora(20, 0);
+		int result = suma.division();
+		assertEquals(2, result);
+		}catch(ArithmeticException e){
+			//Prueba satisfactoria
+		}
 	}
 
 }

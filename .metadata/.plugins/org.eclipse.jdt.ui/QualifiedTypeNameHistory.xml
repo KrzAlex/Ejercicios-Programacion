@@ -8,4 +8,8 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="Leer"/>
+<fullyQualifiedTypeName name="Calculadora"/>
+<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+<fullyQualifiedTypeName name="Cuentacorriente"/>
 </qualifiedTypeNameHistroy>
