@@ -123,7 +123,7 @@ public class Cuentacorriente {
 	}
 
 	public void cerrarCuentas() {
-		this.cliente = "CERRADA";
+		this.cliente = this.cliente+"CERRADA";
 		this.saldo = 0.0;
 		numCuentas--;
 	}

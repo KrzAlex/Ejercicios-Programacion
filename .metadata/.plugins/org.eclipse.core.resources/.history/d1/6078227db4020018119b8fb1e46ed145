@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Principal {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Autor autores[]=new Autor[100];
+		Libro libros[]=new Libro[100];
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

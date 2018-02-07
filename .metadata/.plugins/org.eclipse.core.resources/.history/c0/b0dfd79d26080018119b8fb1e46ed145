@@ -1,0 +1,212 @@
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Tragabolas {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner teclado = new Scanner(System.in);
+		Thread.sleep(1000);
+		System.out.println("Bienvenidos al juego Tragabolas.");
+		Thread.sleep(1000);
+		System.out.println("Que desea hacer?");
+		Thread.sleep(1000);
+		Bolas bolas = new Bolas("", 0, 0, 0);
+		int opcion = 10;
+		int tragabolas = 0;
+		while (opcion != 0) {
+			if (bolas.getNumTragabolas() == 0) {
+				System.out.println("1: Crear Tragabolas");
+				System.out.println("0: Fin");
+				opcion = teclado.nextInt();
+				bolas = menu1(opcion);
+
+			} else {
+				System.out.println("2: Darle de comer");
+				System.out.println("3: Hacerle trotar");
+				System.out.println("4: Hacerle dormir");
+				System.out.println("5: Ver estado");
+				System.out.println("0: Fin");
+				opcion = teclado.nextInt();
+				menu(opcion, bolas);
+			}
+
+		}
+	}
+
+	public static Bolas menu1(int opcion) throws InterruptedException {
+		String color = "";
+		int maxBolas = 0;
+		Bolas bolas = new Bolas("0", 0, 0, 0);
+		Scanner teclado = new Scanner(System.in);
+		if (opcion == 1) {
+			System.out.println("De que color desea que sea su tragabolas?");
+			System.out.println("El tragabolas solo pueden ser azul, amarillo, rojo o verde");
+			color = teclado.nextLine();
+			color = verificadorCol(color);
+			System.out.println("Cuantas bolas puede comer como maximo?");
+			maxBolas = teclado.nextInt();
+			maxBolas = verificadorMax(maxBolas);
+			bolas = new Bolas(color, 0, maxBolas, 1);
+
+			return bolas;
+		}
+		return bolas;
+	}
+
+	public static void menu(int opcion, Bolas bolas) throws InterruptedException {
+		Scanner teclado = new Scanner(System.in);
+
+		switch (opcion) {
+		case 0:
+			finalizar_Prog();
+			break;
+		case 2:
+			bolas = comer(bolas);
+
+			break;
+		case 3:
+			bolas = trotar(bolas);
+
+			break;
+		case 4:
+			bolas = dormir(bolas);
+
+			break;
+		case 5:
+			status(bolas);
+
+			break;
+
+		default:
+			System.out.println("Por vafor introduzca un valor posible");
+			System.out.println();
+			break;
+		}
+
+	}
+
+
+	public static Bolas comer(Bolas bolas) throws InterruptedException {
+		Scanner teclado = new Scanner(System.in);
+		int comodin = 0;
+		System.out.println("Cuantas bolas desea darle");
+		Thread.sleep(1000);
+		comodin = teclado.nextInt();
+		while (comodin > (bolas.getMaxBolas() - bolas.getBolasComidas())) {
+			System.out.println("El tragabolas no puede comer tanto");
+			System.out.println("Por favor introduzca un numero de bolas que pueda comer");
+			System.out.println("Puede comer " + (bolas.getMaxBolas() - bolas.getBolasComidas()) + " bolas mas");
+			comodin = teclado.nextInt();
+		}
+		System.out.println("El tragabolas se va a comer " + comodin + " bolas");
+		System.out.println();
+		bolas.setBolasComidas(comodin);
+		return bolas;
+	}
+
+	public static Bolas trotar(Bolas bolas) throws InterruptedException {
+		Thread.sleep(1000);
+		System.out.println();
+		if (bolas.getBolasComidas() > 0) {
+			Thread.sleep(1000);
+			System.out.println("Mirame, estoy trotando");
+			Thread.sleep(1000);
+			bolas.setBolasComidas(-1);
+			System.out.println();
+			return bolas;
+		} else {
+			Thread.sleep(1000);
+			System.out.println("No puedo trotar, tengo hambre");
+			Thread.sleep(1000);
+		}
+		System.out.println();
+		return bolas;
+	}
+
+	public static Bolas dormir(Bolas bolas) throws InterruptedException {
+		if (bolas.getBolasComidas() == bolas.getMaxBolas()) {
+			Thread.sleep(1000);
+			System.out.println("Estoy lleno, hora de dormir. ZzZzZzZz.");
+			Thread.sleep(2000);
+			System.out.println("Me he despertado :D");
+			System.out.println();
+			bolas.setBolasComidas(-(bolas.maxBolas / 2));
+			return bolas;
+		} else {
+			Thread.sleep(1000);
+			System.out.println("No quiero dormir");
+		}
+		System.out.println();
+
+		return bolas;
+	}
+
+	public static void status(Bolas bolas) throws InterruptedException {
+		System.out.println("Tu tragabolas es de color: " + bolas.getColor());
+		System.out.println("Se ha comido " + bolas.getBolasComidas() + " bolas");
+		if (bolas.getBolasComidas() == bolas.getMaxBolas()) {
+			System.out.println("Esta lleno");
+		} else {
+			System.out.println("Puede comer " + (bolas.getMaxBolas() - bolas.getBolasComidas()) + " bolas mas");
+		}
+		System.out.println();
+		Thread.sleep(1000);
+	}
+
+	public static String verificadorCol(String color) throws InterruptedException {
+		Scanner teclado = new Scanner(System.in);
+		String comodin = "";
+		color = color.toLowerCase();
+		while (!(color.equals("azul") || color.equals("amarillo") || color.equals("rojo") || color.equals("verde"))) {
+			Thread.sleep(1000);
+			System.out.println("El Tragabola solo pueden ser azul, amarillo, rojo o verde");
+			Thread.sleep(1000);
+			System.out.println("Por favor introduce un color adecuado");
+			color = teclado.nextLine();
+			color = color.toLowerCase();
+		}
+		comodin = color;
+		return comodin;
+	}
+
+	public static Integer verificadorMax(Integer maxBolas) throws InterruptedException {
+		Scanner teclado = new Scanner(System.in);
+		while (maxBolas < 1) {
+			Thread.sleep(1000);
+			System.out.println("El numero de bolas maximas que puede comer debe ser un numero positivo");
+			System.out.println("Vuelve a introducir la cantidad porfavor");
+			maxBolas = teclado.nextInt();
+		}
+		return maxBolas;
+	}
+
+	private static void finalizar_Prog() throws InterruptedException {
+		System.out.println("Acabas de matar a tu tragabolas");
+		Thread.sleep(1000);
+		System.out.println("Estas feliz?");
+		Thread.sleep(1000);
+		System.out.println("Pues tu tragabolas te perseguira en tus sueños");
+		Thread.sleep(1000);
+		System.out.println("R.I.P.");
+		Thread.sleep(3000);
+		System.out.println("Or not¿?");
+		Thread.sleep(3000);
+
+		System.out.println(" _  _       ___ .           _   _   _ ");
+		System.out.println("|  | | |\\ |  |  | |\\ | | | |_| |_| |_|");
+		System.out.println("|_ |_| | \\|  |  | | \\| |_| | | | \\ | |");
+	}
+
+}

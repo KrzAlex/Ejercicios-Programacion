@@ -1,0 +1,50 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TragabolasTest {
+
+	@Test
+	public void testComer1() {
+		Bolas bolas = new Bolas("0", 0, 0, 0);
+		Tragabolas comer = null;
+		Bolas bolascomidas=null;
+		bolascomidas = comer.comer(bolas);
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Test
+	public void testTrotar() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDormir() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testStatus() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testVerificadorCol() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testVerificadorMax() {
+		fail("Not yet implemented");
+	}
+
+}

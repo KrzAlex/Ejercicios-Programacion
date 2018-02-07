@@ -1,0 +1,21 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class PruebasTest {
+
+	@Test
+	public void testMetodo() {
+		boolean a, b, c;
+		a=true;
+		b=true;
+		c=true;
+		testMetodo(a,b,c);
+	}
+
+	@Test
+	public void testContar_letra() {
+		fail("Not yet implemented");
+	}
+
+}

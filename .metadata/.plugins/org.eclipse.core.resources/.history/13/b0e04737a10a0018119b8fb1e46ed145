@@ -1,0 +1,38 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Tragabolas2Test {
+
+	@Test
+	public void testComer() {
+		Tragabolas comerbolas=null;
+		Bolas bolas=new Bolas(" ", 0, 10, 1);
+		Integer comodin=10;
+		Boolean resultado=Tragabolas.comer(bolas,comodin);
+		
+	}
+
+	@Test
+	public void testTrotar() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDormir() {
+		fail("Not yet implemented");
+	}
+
+	
+
+	@Test
+	public void testVerificadorCol() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testVerificadorMax() {
+		fail("Not yet implemented");
+	}
+
+}

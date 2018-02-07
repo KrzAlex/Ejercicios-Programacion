@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Libro {
+	public String titulo;
+	public Autor autor;
+	public Double precio;
+	public Integer cantidad=0;
+	
+	
+}

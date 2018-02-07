@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Autor {
+	public String nombre;
+	public String email;
+	public char sexo;
+	public 
+	
+	
+}

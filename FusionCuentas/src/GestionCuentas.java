@@ -72,42 +72,42 @@ public class GestionCuentas {
 				break;
 
 			case 7: // Fusionar dos cuentas
-				fusionCuentas(cuentas, existe);
+				fusionCuentas(cuentas);
 				break;
 			}
 		} while (opcion != 0);
 	}
 
-	private static void fusionCuentas(Cuentacorriente[] cuentas, Boolean existe) {
+	private static void fusionCuentas(Cuentacorriente[] cuentas) {
 		String cuenta1 = Leer.pedirCadena("Cual es la primera cuenta que desea fusionar?");
 		int i, j;
-		existe = false;
-		for (i = 0; i < Cuentacorriente.getSiguiente() - 1; i++) {
-			if (cuentas[i].getNumero().equals(cuenta1)) {
-				existe = true;
 
-				break;
-			}
-		}
+		i = verificador_cuentas(cuentas, cuenta1);
 
-		if ((!existe) || cuentas[i].getCliente().equals("CERRADA")) {
+		if (i < 0 || cuentas[i].getCliente().equals(cuentas[i].getCliente().indexOf("CERRADA"))) {
 			Leer.mensaje("La cuenta " + cuenta1 + " no existe o esta CERRADA ");
 			return;
 		}
-		existe = false;
+		
 		String cuenta2 = Leer.pedirCadena("Con que cuenta desea fusionar la anterior?");
-		for (j = 0; j < Cuentacorriente.getSiguiente() - 1; j++) {
-			if (cuentas[j].getNumero().equals(cuenta2)) {
-				existe = true;
-				break;
-			}
-		}
-		if (existe == false || cuentas[j].getCliente().equals("CERRADA")) {
-			Leer.mensaje("La cuenta " + cuenta2 + " no existe o esta CERRADA ");
+
+		j = verificador_cuentas(cuentas, cuenta2);
+
+		if (j < 0 || cuentas[j].getCliente().equals(cuentas[j].getCliente().indexOf("CERRADA"))) {
+			Leer.mensaje("La cuenta " + cuenta1 + " no existe o esta CERRADA ");
 			return;
 		}
 		cuentas[cuentas[0].getSiguiente() - 1] = cuentas[i].fusionarCuentas(cuentas[j]);
 
+	}
+
+	private static int verificador_cuentas(Cuentacorriente[] cuentas, String cuenta) {
+		for (int i = 0; i < Cuentacorriente.getSiguiente() - 1; i++) {
+			if (cuentas[i].getNumero().equals(cuenta)) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	private static void cerrarCuentas(Cuentacorriente[] cuentas, Boolean existe) {

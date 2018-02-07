@@ -1,0 +1,51 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Libro {
+	public String titulo;
+
+	public Double precio;
+	public Integer cantidad = 0;
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Integer getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	@Override
+	public String toString() {
+		return "Libro [titulo=" + titulo + ", precio=" + precio + ", cantidad=" + cantidad + "]";
+	}
+
+	public Libro(String titulo, Double precio, Integer cantidad) {
+		super();
+		this.titulo = titulo;
+		this.precio = precio;
+		this.cantidad = cantidad;
+	}
+
+}

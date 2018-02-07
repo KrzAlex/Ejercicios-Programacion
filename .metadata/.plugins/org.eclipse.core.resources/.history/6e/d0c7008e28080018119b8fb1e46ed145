@@ -1,0 +1,87 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Libro {
+	public String numero;
+	public String titulo;
+	public Autor autor=null;
+	public Double precio;
+	public Integer cantidad = 0;
+	public static Integer siguiente = 1;
+	public Integer numAutores=0;
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
+	public Double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Double precio) {
+		this.precio = precio;
+	}
+
+	public Integer getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public static Integer getSiguiente() {
+		return siguiente;
+	}
+
+	public static void setSiguiente(Integer siguiente) {
+		Libro.siguiente = siguiente;
+	}
+
+	@Override
+	public String toString() {
+		return "Libro [titulo=" + titulo + autor + ", precio=" + precio + ", cantidad=" + cantidad + "]";
+	}
+
+	public Libro(String titulo, Autor autor, Double precio, Integer cantidad) {
+		String num = "0000" + siguiente;
+		this.numero = num.substring(num.length() - 3);
+		this.titulo = titulo;
+		this.autor = autor;
+		this.precio = precio;
+		this.cantidad = cantidad;
+		siguiente++;
+	}
+
+	public Libro crearLibro(String titulo, Autor autor, double precio, Integer cantidad) {
+		Libro libroNEW = null;
+		libroNEW=new Libro(titulo, autor, precio, cantidad);
+		return libroNEW;
+	}
+
+}

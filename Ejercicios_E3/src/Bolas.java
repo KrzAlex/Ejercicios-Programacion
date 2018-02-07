@@ -14,6 +14,7 @@ public class Bolas {
 	public Integer maxBolas;
 	public Integer numTragabolas;
 	
+	//Getters y Setters
 	
 	public Integer getNumTragabolas() {
 		return numTragabolas;
@@ -39,6 +40,9 @@ public class Bolas {
 	public void setMaxBolas(int maxBolas) {
 		this.maxBolas = maxBolas;
 	}
+	
+	//Constructor
+	
 	public Bolas(String color, Integer bolasComidas, Integer maxBolas, Integer numTragabolas) {
 		super();
 		this.color = color;

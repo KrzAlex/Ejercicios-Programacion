@@ -1,0 +1,27 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class metodosTest {
+
+	@Test
+	public void testMetodo() {
+		metodos prueba1 = new metodos();
+		boolean a, b;
+		a = true;
+		b = false;
+		int result = prueba1.metodo(a, b);
+		assertEquals(2, result);
+	}
+
+	@Test
+	public void testContar_letra() {
+		metodos prueba2 = new metodos();
+		String cadena, letra;
+		cadena = "patata";
+		letra = "a";
+		int result = prueba2.contar_letra(cadena, letra);
+		assertEquals(3, result);
+	}
+
+}

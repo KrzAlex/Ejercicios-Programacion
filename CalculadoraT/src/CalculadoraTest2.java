@@ -20,7 +20,6 @@ public class CalculadoraTest2 {
 
 	@Test
 	public void testDivision2() {
-		
 		Calculadora suma = new Calculadora(20, 0);
 		Integer result = suma.division2();
 		assertNull(result);
