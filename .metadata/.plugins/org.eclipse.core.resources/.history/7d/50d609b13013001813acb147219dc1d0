@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Responsable extends Empleado {
+	private float bono=100;
+	private String departamento;
+	private Integer personas_acargo;
+	private static float plusresponsabilidad=10; 
+	
+	//Getters y Setters
+	
+}

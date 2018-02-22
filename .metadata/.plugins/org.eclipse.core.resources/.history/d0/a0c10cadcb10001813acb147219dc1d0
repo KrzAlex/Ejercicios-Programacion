@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Jefes extends Empleados{
+	public String titulo;
+	public String departamento;
+}

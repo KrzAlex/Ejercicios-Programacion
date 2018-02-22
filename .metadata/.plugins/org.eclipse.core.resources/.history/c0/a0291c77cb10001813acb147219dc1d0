@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Empleados {
+	public String nombre;
+	public Integer saldo;
+}

@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Responsable extends Empleado {
+	private float bono=20;
+}

@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 public class Leer {
 	
 	/**
-	 * Método para imprimir mensaje que se repetía
+	 * Metodo para imprimir mensaje que se repetia
 	 */
 	static public void mensaje(String mensage){
 		System.out.println(mensage);
@@ -32,6 +32,10 @@ public class Leer {
 				dato="";
 				mensaje(texto);
 				dato = dataIn.readLine();
+				while (dato.equals("")) {
+					mensaje("No ha introducido ningun dato");
+					dato = dataIn.readLine();
+				}
 				error=false;
 			} catch (IOException e) {
 				mensaje("Vuelve a introducir el dato, por favor: ");

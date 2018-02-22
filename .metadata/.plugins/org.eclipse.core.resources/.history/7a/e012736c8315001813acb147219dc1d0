@@ -1,0 +1,88 @@
+import java.lang.management.MemoryNotificationInfo;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Proyectogrupo4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Empleado empleados[] = new Empleado[20];
+		Integer opcion=30;
+		base_Datos(empleados);
+		while (opcion!=0) {
+			
+			Leer.mensaje("1. Añadir Empleado");
+			Leer.mensaje("2. Lista de la plantilla");
+			Leer.mensaje("3. Calcular nomina");
+			Leer.mensaje("4. Mantener los valores Tipo Static");
+			opcion=Leer.pedirEntero("");
+			menu(opcion, empleados);
+		}		
+	}
+	public static void menu(Integer opcion,Empleado[] empleados){
+		
+		switch (opcion) {
+		case 1:
+			String nombre=Leer.pedirCadena("Cual es el nombre del empeado");
+			
+			
+			
+			
+			
+			
+			break;
+		case 2: //Mostrar plantilla
+			for (int i = 0; i < empleados.length; i++) {
+				if (empleados[i]==null) {
+					break;
+				}
+				empleados [i].mostrarPlantilla();
+				Leer.mensaje("");
+			}
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		default:
+			break;
+		}
+		
+		
+	}	
+	
+	public static void base_Datos(Empleado[] empleados){
+		for (int i = 0; i < 2; i++) {
+			String nombre = "Jefe " + i;
+			String departamento = "Jefe de " + i;
+			Fecha fecha_nacimiento = new Fecha(29, 8, 1999);
+			Fecha fechaingreso=new Fecha(02, 3, 2004);
+			empleados[i]=new Responsable(nombre, fecha_nacimiento, fechaingreso, departamento,(float) 100);
+		}
+		for (int i = 2; i < 5; i++) {
+			String nombre = "Administrativo " + i;
+			String departamento = "Administrativo de " + i;
+			Fecha fecha_nacimiento = new Fecha(29, 8, 1999);
+			Fecha fechaingreso=new Fecha(02, 3, 2004);
+			empleados[i]=new Administrativo(nombre, fecha_nacimiento, fechaingreso, departamento, (Responsable) empleados[0]);
+		}
+		for (int i = 5; i < 9; i++) {
+			String nombre = "Tecnico " + i;
+			String especialidad = "Especialidad de " + i;
+			Fecha fecha_nacimiento = new Fecha(29, 8, 1999);
+			Fecha fechaingreso=new Fecha(02, 3, 2004);
+			empleados[i]=new Tecnico(nombre, fecha_nacimiento, fechaingreso, especialidad, (Responsable) empleados[1]);
+		}
+		
+	}
+}

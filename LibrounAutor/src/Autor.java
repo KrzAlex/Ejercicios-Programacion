@@ -89,6 +89,4 @@ public class Autor {
 	public void modificarfecha(String nuevafechanacimiento){
 		this.fechanacimiento=nuevafechanacimiento;
 	}
-		
-	
 }

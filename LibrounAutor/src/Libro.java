@@ -14,6 +14,7 @@ public class Libro {
 	public Integer cantidad = 0;
 	public static Integer siguiente = 1;
 	public Integer numAutores = 0;
+	public static Integer numLibros=1;
 
 	public String getNumero() {
 		return numero;
@@ -70,20 +71,21 @@ public class Libro {
 			if (autor[i] == null) {
 				break;
 			}
-			autores = "\n" + autores + autor[i].toString();
+			autores = autores +"\n"+autor[i].toString();
 		}
-		return "Libro [numero=" + numero + ", titulo=" + titulo + autores + ", \nprecio=" + precio + ", cantidad="
+		return "Libro [numero=" + numero + ", titulo=" + titulo+autores + ", \nprecio=" + precio + ", cantidad="
 				+ cantidad + "]\n";
 	}
 
 	public Libro(String titulo, Autor autor, Double precio, Integer cantidad) {
-		String num = "0000" + siguiente;
+		String num = "0000" + numLibros;
 		this.numero = num.substring(num.length() - 3);
 		this.titulo = titulo;
 		this.autor[numAutores] = autor;
 		this.precio = precio;
 		this.cantidad = cantidad;
 		siguiente++;
+		numLibros++;
 		numAutores++;
 	}
 
@@ -104,16 +106,39 @@ public class Libro {
 		}
 	}
 
-	public void modificarlibroautores(String opcion, Autor[] autores) {
+	public void modificarlibroautores(String opcion, Autor autores2) {
 		Integer numAut = 0;
 		Boolean encontrado = false;
 		String nume = "";
-		if (opcion.equals("001")) {
-			
-			añadirAutor(numAut, autores);
+		if (opcion.equals("001")) {	
+			for (int i = 0; i < autor.length; i++) {
+				if (autor[i]==null) {
+					break;
+				}
+				if (autor[i].getNumero().equals(autores2.getNumero())) {
+					Leer.mensaje("Lo sentimos, ese autor ya esta en este libro");
+					return;
+				}
+			}
+			añadirAutor(autores2);
 		}
 		if (opcion.equals("002")) {
-			
+			Leer.mensaje(mostrarAutores());
+			nume=Leer.pedirCadena("Que autor desea eliminar?");
+			for (int i = 0; i < autor.length; i++) {
+				if (autor[i]==null) {
+					break;
+				}
+				if (nume.equals(autor[i].getNumero())) {
+					numAut=i;
+					encontrado=true;
+					break;
+				}
+			}
+			if (!encontrado) {
+				Leer.mensaje("autor no encontrado");
+				return;
+			}
 			eliminarAutor(numAut);
 		}
 	}
@@ -121,7 +146,7 @@ public class Libro {
 	public void modificarlibroprecio(Double newPrecio) {
 		Leer.mensaje("Se ha modificado el precio del libro " + this.numero + " que anteriormente era \"" + this.precio
 				+ "\" y se ha cambiado por \"" + newPrecio + "\"");
-		this.precio = newPrecio;
+		this.precio = newPrecio+0.0;
 	}
 
 	public void modificarlibrocantidad(Integer newCant) {
@@ -141,14 +166,30 @@ public class Libro {
 		return autores;
 	}
 
+	public void añadirAutor(Autor newautor) {
+		autor[numAutores]=newautor;
+		numAutores++;
+	}
+
 	public void eliminarAutor(Integer numEAutor) {
+		Leer.mensaje("El autor "+autor[numEAutor].getNumero()+", ha sido eliminado del libro "+titulo);
 		autor[numEAutor] = null;
 		numAutores--;
+		for (int i = numEAutor; i < autor.length-1; i++) {
+			autor[i]=autor[i+1];
+		}
 	}
 
-	public void añadirAutor(Integer numAAutor, Autor[] newautor) {
-		
+	public void eliminarAutor(Autor autor2) {
+		for (int i = 0; i < autor.length; i++) {
+			if (autor[i] == autor2) {
+				for (int j = i; j < autor.length - 1; j++) {
+					autor[j] = autor[j + 1];
+				}
+				numAutores--;
+				break;
+			}
+		}
+		return;
 	}
-
-
 }

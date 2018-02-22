@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Empleado {
+	private String nombre;
+	private Fecha fecha_nacimiento;
+	private Integer numero_empleado;
+	private static Integer siguiente=1;
+	private float Salario base=735.70;
+	
+	
+}

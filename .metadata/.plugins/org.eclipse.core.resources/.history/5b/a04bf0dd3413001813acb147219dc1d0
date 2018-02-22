@@ -1,0 +1,37 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Proyectogrupo4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Empleado empleados[]= new Empleado[20];
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	public void base_Datos(){
+		for (int i = 0; i < 2; i++) {
+			Fecha fecha_nacimiento=new Fecha(dia, mes, anyo);
+			Fecha fechaingreso=new Fecha(dia, mes, anyo);
+			Empleado empleados[i]=new Responsable(nombre, fecha_nacimiento, fechaingreso, departamento);
+		}
+		
+		
+	}
+}

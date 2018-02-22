@@ -1,0 +1,35 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Proyectogrupo4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Empleado empleados[]= new Empleado[20];
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	public void base_Datos(){
+		for (int i = 0; i < 2; i++) {
+			Empleado empleados[i]=new Responsable(nombre, fecha_nacimiento, fechaingreso, departamento, personas_acargo);
+		}
+		
+		
+	}
+}
