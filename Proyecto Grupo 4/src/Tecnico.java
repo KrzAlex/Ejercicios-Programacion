@@ -37,10 +37,10 @@ public class Tecnico extends Empleado {
 	}
 
 	// Constructor
-	public Tecnico(String nombre, Fecha fecha_nacimiento, Fecha fechaingreso, String especialidad, Responsable jefe) {
+	public Tecnico(String nombre, Fecha fecha_nacimiento, Fecha fechaingreso, String especialidad, Responsable jefe, float plusEspecialidad) {
 		super(nombre, fecha_nacimiento, fechaingreso);
 		this.especialidad = especialidad;
-		this.plusEspecialidad = (float) 30;
+		this.plusEspecialidad = plusEspecialidad;
 		this.jefe = jefe;
 		jefe.personasacargo();
 	}

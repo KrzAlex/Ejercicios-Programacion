@@ -12,4 +12,9 @@
 <fullyQualifiedTypeName name="Calculadora"/>
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
 <fullyQualifiedTypeName name="Cuentacorriente"/>
+<fullyQualifiedTypeName name="java.lang.Readable"/>
+<fullyQualifiedTypeName name="Empleado"/>
+<fullyQualifiedTypeName name="Responsable"/>
+<fullyQualifiedTypeName name="Administrativo"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

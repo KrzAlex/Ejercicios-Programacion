@@ -101,9 +101,9 @@ public class Proyectogrupo4 {
 					Leer.mensaje("Error en el jefe");
 					break;
 				}
-
+				float plusEspecialidad=Leer.pedirFloat("De cuanto es su plus de especialidad");
 				empleados[Empleado.getSiguiente() - 1] = new Tecnico(nombre, fecha_nacimiento, fechaingreso,
-						especialidad, (Responsable) empleados[numero]);
+						especialidad, (Responsable) empleados[numero], plusEspecialidad);
 
 				break;
 			case 3:
@@ -151,7 +151,8 @@ public class Proyectogrupo4 {
 				if (empleados[i] == null) {
 					break;
 				}
-				total=total+empleados[i].calculoNomina();		
+				total=total+empleados[i].calculoNomina();	
+				Leer.mensaje("El empleado "+empleados[i].getNombre()+" tiene como nominda: "+empleados[i].calculoNomina());
 			}
 			System.out.println("La nomina total de la plantilla es: "+total);
 			break;
@@ -206,8 +207,8 @@ public class Proyectogrupo4 {
 		for (int i = 2; i < 5; i++) {
 			String nombre = "Administrativo " + i;
 			String departamento = "Administrativo de " + i;
-			Fecha fecha_nacimiento = new Fecha(29, 8, 1999);
-			Fecha fechaingreso = new Fecha(02, 3, 2004);
+			Fecha fecha_nacimiento = new Fecha(29, 8, 1900+i*4);
+			Fecha fechaingreso = new Fecha(02, 3, 2000+i);
 			empleados[i] = new Administrativo(nombre, fecha_nacimiento, fechaingreso, departamento,
 					(Responsable) empleados[0]);
 		}
@@ -217,7 +218,7 @@ public class Proyectogrupo4 {
 			Fecha fecha_nacimiento = new Fecha(29, 8, 1999);
 			Fecha fechaingreso = new Fecha(02, 3, 2004);
 			empleados[i] = new Tecnico(nombre, fecha_nacimiento, fechaingreso, especialidad,
-					(Responsable) empleados[1]);
+					(Responsable) empleados[1], ((float) 10*(int) (Math.random()*3)+1 ));
 		}
 
 	}

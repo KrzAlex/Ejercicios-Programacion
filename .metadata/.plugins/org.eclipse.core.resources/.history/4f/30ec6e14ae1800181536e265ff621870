@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Alumno {
+	private Asignatura asignaturas[]=new Asignatura[10];
+	private Integer notas[]=new integer[10];
+}

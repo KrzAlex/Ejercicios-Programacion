@@ -1,0 +1,33 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Colegio {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Alumno alumnos []=new Alumno [20];
+		Asignatura asignaturas []=new Asignatura [20];
+		baseDatos();
+		
+		
+		
+		
+		
+	}
+	
+	public static void baseDatos(){
+		for (int i = 0; i < array.length; i++) {
+			
+		}
+		
+		
+	}
+}

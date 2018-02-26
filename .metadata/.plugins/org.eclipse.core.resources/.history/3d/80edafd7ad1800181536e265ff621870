@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Asignatura {
+	private Integer horasSemanales;
+	private Character nivel;
+	private String nombre;
+	
+	
+	
+}

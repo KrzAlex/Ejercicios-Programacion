@@ -1,8 +1,0 @@
-package visibilidad1;
-public class jefe {
-	public class Jefe extends Empleado{
-		public Jefe(){
-
-		}
-
-}

@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Alumno {
+	private Asignatura asignaturas[10];
+}

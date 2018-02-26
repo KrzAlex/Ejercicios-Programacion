@@ -1,0 +1,91 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Alumno {
+	private Asignatura asignaturas[]=new Asignatura[10];
+	private Integer notas[]=new Integer[10];
+	private String nombre;
+	private Fecha fechaNac;
+	
+	//Getters y Setters
+	public Asignatura[] getAsignaturas() {
+		return asignaturas;
+	}
+	public void setAsignaturas(Asignatura[] asignaturas) {
+		this.asignaturas = asignaturas;
+	}
+	public Integer[] getNotas() {
+		return notas;
+	}
+	public void setNotas(Integer[] notas) {
+		this.notas = notas;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Fecha getFechaNac() {
+		return fechaNac;
+	}
+	public void setFechaNac(Fecha fechaNac) {
+		this.fechaNac = fechaNac;
+	}
+	
+	//Getters y Setters
+	public Alumno(String nombre, Fecha fechaNac) {
+		this.nombre = nombre;
+		this.fechaNac = fechaNac;
+	}
+	
+	//Metodos
+	public String modNombre(String nombre){
+		if (nombre.equals(this.nombre)) {
+			return "El nombre no se puede modificar porque es el mismo.";
+		} else {
+			this.nombre = nombre;
+			return "El nombre se ha modificado correctamente";
+		}
+		
+	}
+	
+	public String mostrarNombre(){
+		return this.nombre;
+	}
+	
+	public String modFechaNacimiento(Integer dia, Integer mes, Integer anyo){
+		Fecha nuevaFecha=new Fecha(dia, mes, anyo);
+		if (this.fechaNac==nuevaFecha) {
+			return "La fecha de nacimiento no se puede modificar ya que es la misma";
+		} else {
+			this.fechaNac=nuevaFecha;
+			return "La fecha de nacimiento se ha modificado";
+		}
+	}
+	
+	public Integer mostraredad(Fecha hoy){
+		Integer edad=this.fechaNac.difFechas(hoy);
+		edad=edad/365;
+		return edad;
+	}
+	public String añadirasignaturas(Asignatura nuevaAsignatura){
+		Boolean encontrado=false;
+		Integer localizacion=0;
+		for (int i = 0; i < asignaturas.length; i++) {
+			if (asignaturas[i]==null) {
+				break;
+			}
+			
+			
+		}
+		
+		
+	}
+	
+}
