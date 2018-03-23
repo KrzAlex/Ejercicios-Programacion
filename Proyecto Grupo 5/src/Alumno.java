@@ -113,6 +113,7 @@ public class Alumno {
 		for (int i = 0; i < asignaturas.length; i++) {
 			if (asignaturas[i] == asignaturaN) {
 				posicion = i;
+				break;
 			}
 		}
 		this.notas[posicion] = nota;
@@ -129,24 +130,29 @@ public class Alumno {
 
 		return "La nota es " + this.notas[posicion];
 	}
-	
-	public Integer mostrarMedia(){
-		Integer notaTotal=0;
-		Integer numAsignaturas=0;
+
+	public Integer mostrarMedia() {
+		Integer notaTotal = 0;
+		Integer numAsignaturas = 0;
 		for (int i = 0; i < notas.length; i++) {
-			if (notas[i]==null) {
+			if (notas[i] == null) {
 				break;
 			}
-			notaTotal=notas[i]+notaTotal;
+			notaTotal = notas[i] + notaTotal;
 			numAsignaturas++;
 		}
-		return notaTotal/numAsignaturas;
+		if (numAsignaturas==0) {
+			return 0;
+		} else {
+			return notaTotal / numAsignaturas;
+		}
+		
 	}
-	
-	public String calificacion(Asignatura asignaturaN){
+
+	public String calificacion(Asignatura asignaturaN) {
 		for (int i = 0; i < asignaturas.length; i++) {
-			if (asignaturas[i]==asignaturaN) {
-				if (this.notas[i]>=6) {
+			if (asignaturas[i] == asignaturaN) {
+				if (this.notas[i] >= 6) {
 					return "Aprobado";
 				} else {
 					return "Suspenso";
@@ -155,29 +161,43 @@ public class Alumno {
 		}
 		return "Asignatura no encontrada";
 	}
-	public String boletin(Fecha fechaactual){
-		String textoboletin=this.nombre+" Edad: "+this.mostraredad(fechaactual)+ "\n";
+
+	public String boletin(Fecha fechaactual) {
+		String textoboletin = this.nombre + " Edad: " + this.mostraredad(fechaactual) + "\n";
 		for (int i = 0; i < asignaturas.length; i++) {
 			if (asignaturas[i] == null) {
 				break;
 			}
-			if (notas[i]!=null) {
-				textoboletin=textoboletin+(i+1)+". "+this.asignaturas[i].getNombre()+":  "+this.notas[i]+"    "+this.calificacion(this.asignaturas[i])+" \n";  
+			if (notas[i] != null) {
+				textoboletin = textoboletin + (i + 1) + ". " + this.asignaturas[i].getNombre() + ":  " + this.notas[i]
+						+ "    " + this.calificacion(this.asignaturas[i]) + " \n";
+			}else{
+				textoboletin = textoboletin + (i + 1) + ". " + this.asignaturas[i].getNombre() + ":  No introducido     \n";
 			}
 		}
-		textoboletin=textoboletin+"Nota Media: "+this.mostrarMedia();
+		textoboletin = textoboletin + "Nota Media: " + this.mostrarMedia();
 		return textoboletin;
 	}
+
+	public String mostrarAsignaturas() {
+		String texto = "";
+		for (int i = 0; i < asignaturas.length; i++) {
+			if (asignaturas[i] == null) {
+				break;
+			}
+			texto = texto + (i+1) + ". " + asignaturas[i].getNombre() + "\n";
+		}
+		return texto;
+	}
 	
-	public String mostrarAsignaturas(){
-		String texto="";
+	public Integer contadorAsignaturas(){
+		Integer contador=0;
 		for (int i = 0; i < asignaturas.length; i++) {
 			if (asignaturas[i]==null) {
 				break;
 			}
-			texto=texto+i+". "+asignaturas[i].getNombre()+"\n";
+			contador++;
 		}
-		return texto;		
+		return contador;
 	}
-	
 }

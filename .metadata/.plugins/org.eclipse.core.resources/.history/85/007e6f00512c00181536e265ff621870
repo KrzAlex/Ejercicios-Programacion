@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Pruenas {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Nodo lista=null;
+		Nodo aux=lista;
+		int contador=Leer.pedirEntero("Cuantos numeros deseas introducir?");
+		while (contador>0){
+			int valor=Leer.pedirEntero("Introduce un numero");
+			Nodo nodo=new Nodo(valor);
+			if (lista==null) {
+				lista=new Nodo(valor);
+			} else {
+				while(aux.getsiguiente()!=null){
+					aux=aux.getsiguiente();
+				}
+				aux.setsiguiente(nodo);
+			}
+		
+			
+			contador--;
+		}
+	}
+
+}

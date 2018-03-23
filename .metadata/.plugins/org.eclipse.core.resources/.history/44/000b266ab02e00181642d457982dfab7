@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList listaArray=null;
+		LinkedList listaLinked=null;
+		
+		for (int i = 1; i <= 15; i++) {
+			listaArray.add((int) (Math.random()*15)+1);
+			
+		}
+		
+		
+	}
+
+}

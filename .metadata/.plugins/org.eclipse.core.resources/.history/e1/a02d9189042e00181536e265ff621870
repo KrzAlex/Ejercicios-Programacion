@@ -1,0 +1,78 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Lista {
+	Nodo lista=null;
+
+	public Nodo getLista() {
+		return lista;
+	}
+
+	public void setLista(Nodo lista) {
+		this.lista = lista;
+	}
+
+	
+	public Lista(Integer valor) {
+		this.lista = new Nodo(valor);
+	}
+	
+	public void añadirnodo(Integer valor){
+		Nodo nodo=new Nodo(valor);
+		Nodo aux=this.lista;
+		while (aux.getsiguiente()!=null) {
+			aux=aux.getsiguiente();
+		}			
+		aux.setsiguiente(nodo);
+		
+	}
+	
+	public String listar(){
+		return lista.toString();
+	}
+	
+	public String borrarnodo(Integer valor){
+		Nodo aux=this.lista;
+		Nodo aux1=aux.getsiguiente();
+		if (buscadorNodo(valor)) {
+			
+			
+			while (condition) {
+				
+			}
+			
+			
+			return "El valor se ha borrado exitosamente";
+		} else {
+			return "Ese valor es inexistente";
+		}
+		
+	}
+	
+	public Boolean buscadorNodo(Integer valor){
+		Boolean encontrado=false;
+		Nodo aux=this.lista;
+		if (aux.getValor()==valor) {
+			encontrado=true;
+		}else {
+			while (aux.getsiguiente()!=null) {
+				if (aux.getValor()==valor) {
+					encontrado=true;
+					break;
+				}				
+				aux=aux.getsiguiente();
+			}
+		}
+		return encontrado;
+	}
+	
+	
+	
+	
+	
+}

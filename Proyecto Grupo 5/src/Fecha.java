@@ -26,7 +26,7 @@ public class Fecha {
 			if (!comprobante) {
 				dia = Leer.pedirEntero("Dia");
 				mes = Leer.pedirEntero("Mes");
-				anyo = Leer.pedirEntero("Anyo");
+				anyo = Leer.pedirEntero("Año");
 			}
 		}
 	}

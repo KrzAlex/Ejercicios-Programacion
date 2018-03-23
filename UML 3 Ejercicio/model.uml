@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_HGyWABsdEeieNOmeALDQeA" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_Lxo6kBsoEeieNOmeALDQeA" name="Clientes">
+    <ownedAttribute xmi:id="_SV2OcBsoEeieNOmeALDQeA" name="DNI" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_U21kgBsoEeieNOmeALDQeA" name="Nombre" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_W8wvMBsoEeieNOmeALDQeA" name="Direccion" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Zs7wwBsoEeieNOmeALDQeA" name="Telefono" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_d_5awBsoEeieNOmeALDQeA" name="Avala" memberEnd="_d_5awRsoEeieNOmeALDQeA _d_5axBsoEeieNOmeALDQeA" navigableOwnedEnd="_d_5awRsoEeieNOmeALDQeA _d_5axBsoEeieNOmeALDQeA">
+    <ownedEnd xmi:id="_d_5awRsoEeieNOmeALDQeA" name="clientes" type="_Lxo6kBsoEeieNOmeALDQeA" association="_d_5awBsoEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d_5awhsoEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d_5awxsoEeieNOmeALDQeA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_d_5axBsoEeieNOmeALDQeA" name="clientes" type="_Lxo6kBsoEeieNOmeALDQeA" association="_d_5awBsoEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_d_5axRsoEeieNOmeALDQeA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_d_5axhsoEeieNOmeALDQeA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_285D0BsoEeieNOmeALDQeA" name="Reservas">
+    <ownedAttribute xmi:id="_4hH2sBsoEeieNOmeALDQeA" name="Precio" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-rjYoBsoEeieNOmeALDQeA" memberEnd="_-rjYoRsoEeieNOmeALDQeA _-rjYpBsoEeieNOmeALDQeA" navigableOwnedEnd="_-rjYoRsoEeieNOmeALDQeA _-rjYpBsoEeieNOmeALDQeA">
+    <ownedEnd xmi:id="_-rjYoRsoEeieNOmeALDQeA" name="clientess" type="_Lxo6kBsoEeieNOmeALDQeA" association="_-rjYoBsoEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-rjYohsoEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rjYoxsoEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_-rjYpBsoEeieNOmeALDQeA" name="reservass" type="_285D0BsoEeieNOmeALDQeA" association="_-rjYoBsoEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-rjYpRsoEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-rjYphsoEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_BAIqYBspEeieNOmeALDQeA" name="Agencia" visibility="private">
+    <ownedAttribute xmi:id="_CvnrABspEeieNOmeALDQeA" name="Nombre" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_FtdVIBspEeieNOmeALDQeA" memberEnd="_FtdVIRspEeieNOmeALDQeA _FtdVJBspEeieNOmeALDQeA" navigableOwnedEnd="_FtdVIRspEeieNOmeALDQeA _FtdVJBspEeieNOmeALDQeA">
+    <ownedEnd xmi:id="_FtdVIRspEeieNOmeALDQeA" name="reservass" type="_285D0BsoEeieNOmeALDQeA" association="_FtdVIBspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FtdVIhspEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FtdVIxspEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_FtdVJBspEeieNOmeALDQeA" name="agencias" type="_BAIqYBspEeieNOmeALDQeA" association="_FtdVIBspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FtdVJRspEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FtdVJhspEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HKnPoBspEeieNOmeALDQeA" name="Estado_Reserva">
+    <templateBinding xmi:id="_rHAlgBspEeieNOmeALDQeA"/>
+    <ownedAttribute xmi:id="_QYZN0BspEeieNOmeALDQeA" name="Fecha_Inicio" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_OF8qEBspEeieNOmeALDQeA" name="Fecha_Final" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_JKgq0BspEeieNOmeALDQeA" name="Litros_Deposito" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDouble"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Z1mvIBspEeieNOmeALDQeA" name="Coche">
+    <ownedAttribute xmi:id="_b0qc0BspEeieNOmeALDQeA" name="Matricula" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_duXwcBspEeieNOmeALDQeA" name="Modelo" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_gBGoEBspEeieNOmeALDQeA" name="Color" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_iG4o0BspEeieNOmeALDQeA" name="Marca" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vxPgABspEeieNOmeALDQeA" memberEnd="_vxPgARspEeieNOmeALDQeA _vxPgBBspEeieNOmeALDQeA _aCeRABsqEeieNOmeALDQeA" navigableOwnedEnd="_vxPgARspEeieNOmeALDQeA _vxPgBBspEeieNOmeALDQeA _aCeRABsqEeieNOmeALDQeA">
+    <ownedEnd xmi:id="_vxPgARspEeieNOmeALDQeA" name="coches" type="_Z1mvIBspEeieNOmeALDQeA" association="_vxPgABspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vxPgAhspEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vxPgAxspEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_vxPgBBspEeieNOmeALDQeA" name="reservass" type="_285D0BsoEeieNOmeALDQeA" association="_vxPgABspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vxPgBRspEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vxPgBhspEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_aCeRABsqEeieNOmeALDQeA" name="estado_Reservas" type="_HKnPoBspEeieNOmeALDQeA" association="_vxPgABspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_aCeRARsqEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aCeRAhsqEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3uYVsBspEeieNOmeALDQeA" name="Garaje">
+    <ownedAttribute xmi:id="_5N5AoBspEeieNOmeALDQeA" name="Identificador" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_7s3kgBspEeieNOmeALDQeA" memberEnd="_7s3kgRspEeieNOmeALDQeA _7s3khBspEeieNOmeALDQeA" navigableOwnedEnd="_7s3kgRspEeieNOmeALDQeA _7s3khBspEeieNOmeALDQeA">
+    <ownedEnd xmi:id="_7s3kgRspEeieNOmeALDQeA" name="garajes" type="_3uYVsBspEeieNOmeALDQeA" association="_7s3kgBspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7s3kghspEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7s3kgxspEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_7s3khBspEeieNOmeALDQeA" name="coches" type="_Z1mvIBspEeieNOmeALDQeA" association="_7s3kgBspEeieNOmeALDQeA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7s3khRspEeieNOmeALDQeA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7s3khhspEeieNOmeALDQeA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

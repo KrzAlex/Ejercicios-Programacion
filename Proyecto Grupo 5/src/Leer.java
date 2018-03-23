@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 public class Leer {
 	
 	/**
-	 * Método para imprimir mensaje que se repetía
+	 * Mï¿½todo para imprimir mensaje que se repetï¿½a
 	 */
 	static public void mensaje(String mensage){
 		System.out.println(mensage);

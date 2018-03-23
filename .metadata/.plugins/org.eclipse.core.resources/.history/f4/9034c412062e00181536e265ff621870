@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class GestionarListas {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Lista lista[]=new Lista [5];
+		
+		lista[1]=new Lista(2);
+		
+		Leer.mensaje(lista[1].listar());
+		
+		lista[1].añadirnodo(5);
+		lista[1].añadirnodo(6);
+		
+		Leer.mensaje(lista[1].listar());
+		
+		Leer.mensaje(lista[1].borrarnodo(7));
+		Leer.mensaje(lista[1].borrarnodo(5));
+	}
+
+}

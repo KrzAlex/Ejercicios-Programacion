@@ -1,0 +1,7 @@
+1520864946782	Move compilation units
+1520865164908	Delete element
+1520865187280	Delete element
+1520952221381	Extract method 'modificarbiblioAutor'
+1520952491446	Extract method 'ModificarReseñaLibros'
+1520953314756	Extract method 'mostrar_Comentarios'
+1520953915125	Extract method 'modificar_Comentarios'

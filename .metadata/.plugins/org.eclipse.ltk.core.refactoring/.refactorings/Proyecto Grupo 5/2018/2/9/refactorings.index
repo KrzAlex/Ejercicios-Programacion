@@ -1,3 +1,5 @@
 1519656218242	Extract method 'creacionAsignatura'
 1519656234201	Extract method 'creacionAlumno'
 1519657617381	Extract method 'añadirAsignatura'
+1519740343225	Extract method 'añadir_Notas'
+1519740360774	Extract method 'mod_Alumno'

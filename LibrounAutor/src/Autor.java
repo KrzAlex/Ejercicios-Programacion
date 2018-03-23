@@ -6,13 +6,14 @@
  * @author usuario
  *
  */
-public class Autor {
+public class Autor implements Comentable, Comparable{
 	public String numero;
 	public String nombre;
 	public String email;
 	public char sexo;
 	public String fechanacimiento;
 	public static Integer siguiente = 1;
+	public String biografia;
 
 	public String getNumero() {
 		return numero;
@@ -62,6 +63,14 @@ public class Autor {
 		Autor.siguiente = siguiente;
 	}
 
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}
+
 	@Override
 	public String toString() {
 		return "Autor [Numero="+numero+", nombre=" + nombre + ", email=" + email + ", sexo=" + sexo + ", fechanacimiento="
@@ -75,6 +84,7 @@ public class Autor {
 		this.email = email;
 		this.sexo = sexo;
 		this.fechanacimiento = fechanacimiento;
+		this.biografia=null;
 		siguiente++;
 	}
 	
@@ -88,5 +98,32 @@ public class Autor {
 	
 	public void modificarfecha(String nuevafechanacimiento){
 		this.fechanacimiento=nuevafechanacimiento;
+	}
+
+	@Override
+	public void comentar(String comentario) {
+		// TODO Auto-generated method stub
+		this.biografia=comentario;
+		
+	}
+
+	@Override
+	public String comentar() {
+		// TODO Auto-generated method stub
+		return "Nombre: "+this.nombre+"\nBiografia: "+this.biografia;
+	}
+
+	@Override
+	public int compareTo(Object arg0) {
+		// TODO Auto-generated method stub
+		Integer opcion=0;
+		if (arg0 instanceof Autor) {
+			Autor a=(Autor) arg0;
+			opcion=this.nombre.toUpperCase().compareTo(a.getNombre().toUpperCase());	
+		}else{
+			Libro a=(Libro) arg0;
+			opcion=this.nombre.toUpperCase().compareTo(a.getTitulo().toUpperCase());
+		}
+		return opcion;
 	}
 }
