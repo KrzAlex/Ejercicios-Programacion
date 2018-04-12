@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio1 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Integer> listaArray=new ArrayList<Integer>();
+		Integer opcion=1;
+		ArrayList cima=null;
+		while (opcion!=0) {
+			opcion=Leer.pedirEntero("1. Apilar \n"
+					+ "2. Desapilar \n"
+					+ "3. Numero de elementos \n"
+					+ "4. Visualizar \n"
+					+ "0. Salir \n"
+					+ "Introduce una opcion");
+			cima=menu(opcion,cima);
+		}
+		
+	}
+	public static ArrayList menu(Integer opcion, ArrayList listaArray){
+	
+		switch (opcion) {
+		case 1:
+			Integer valor=Leer.pedirEntero("Introduce un valor");
+			listaArray.add(0, valor);;
+			break;
+		case 2:
+			if (listaArray.get(0)==null) {
+				Leer.mensaje("La Pila esta vacia");
+			} else {
+				
+				listaArray.set(0, listaArray.get(1));
+				Leer.mensaje("Se ha borrado el primer elemento");
+			}
+			
+			
+			break;
+		case 3:
+			String tamaño=""+listaArray.size();
+			Leer.mensaje(tamaño);
+			
+			break;
+		case 4:
+			
+			
+			break;
+		default:
+			Leer.mensaje("Opcion Inexistente");
+			break;
+		}
+		return listaArray;
+		
+		
+	}
+}

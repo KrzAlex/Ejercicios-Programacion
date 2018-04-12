@@ -13,9 +13,9 @@ public class GestionarListas {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Lista lista=new Lista (2);
+		Lista lista=new Lista ();
 		
-		lista=new Lista(2);
+		lista.añadirnodo(2);
 		
 		Leer.mensaje(lista.listar());
 		Leer.mensaje("");

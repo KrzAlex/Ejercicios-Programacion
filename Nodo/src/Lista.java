@@ -18,12 +18,16 @@ public class Lista {
 	}
 
 	
-	public Lista(Integer valor) {
-		this.lista = new Nodo(valor);
+	public Lista() {
+		this.lista = null;
 	}
 	
 	public void añadirnodo(Integer valor){
 		Nodo nodo=new Nodo(valor);
+		if (this.lista==null) {
+			this.lista=nodo;
+			return;
+		}
 		Nodo aux=this.lista;
 		while (aux.getsiguiente()!=null) {
 			aux=aux.getsiguiente();

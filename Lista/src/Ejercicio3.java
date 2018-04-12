@@ -46,7 +46,7 @@ public class Ejercicio3 {
 		}
 		Leer.mensaje("Valores de objLinkedList: "+listaLinkedNum);
 		Leer.mensaje("");
-		Leer.mensaje("Valores de objArrayList:"+listaArrayNum);
+		Leer.mensaje("Valores de objArrayList: "+listaArrayNum);
 		Leer.mensaje("");
 		Leer.mensaje("Valores de objLinkedList: "+listaLinked.toString());
 		Leer.mensaje("Valores de objArrayList: "+listaArray.toString());

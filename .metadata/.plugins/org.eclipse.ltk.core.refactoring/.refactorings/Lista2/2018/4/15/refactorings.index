@@ -1,0 +1,8 @@
+1523552528063	Rename local variable 'tablaDeEscaños'
+1523552555493	Rename local variable 'escaños'
+1523552567942	Rename local variable 'listaNumEscaños'
+1523556318419	Extract method 'insercionVotos'
+1523556364611	Extract method 'mostrarVotos'
+1523556376155	Extract method 'mostrarescanios'
+1523556391365	Extract method 'insercionEscanios'
+1523556430739	Extract method 'creacionTablaescaños'
