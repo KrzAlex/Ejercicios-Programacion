@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<alumnos> listaNumEscanios = new ArrayList<alumnos>();
+		
+		for (int i = 1; i <= 50; i++) {
+			alumnos alumno=null;
+			
+			
+		}
+		
+	}
+}

@@ -33,6 +33,8 @@ public class Ejercicio7 {
 		Leer.mensaje(boletin.toString());
 		
 		
+		
+		
 	}
 
 }

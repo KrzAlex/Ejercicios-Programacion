@@ -1,0 +1,79 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<alumnos> listaAlumnos = new ArrayList<alumnos>();
+
+		TreeMap<Integer,ArrayList<String>> boletinPrimerT= new TreeMap<>();
+		for (int i = 0; i < 11; i++) {
+			boletinPrimerT.put(i, null);
+		}
+		TreeMap<Integer,ArrayList<String>> boletinSegundoT= new TreeMap<>();
+		for (int i = 0; i < 11; i++) {
+			boletinPrimerT.put(i, null);
+		}
+		TreeMap<Integer,ArrayList<String>> boletinTercerT= new TreeMap<>();
+		for (int i = 0; i < 11; i++) {
+			boletinPrimerT.put(i, null);
+		}
+		
+		
+		
+		for (int i = 1; i <= 20; i++) {
+			alumnos alumno=null;
+			if (i<10){
+			alumno=new alumnos("Nomb "+i, " Apell "+i, (int) (Math.random()*10+1), (int) (Math.random()*10+1), (int) (Math.random()*10+1));
+			}else{
+			alumno=new alumnos("Nomb "+i, "Apell "+i, (int) (Math.random()*10+1), (int) (Math.random()*10+1), (int) (Math.random()*10+1));
+			}
+			listaAlumnos.add(alumno);
+			
+			i = generadorDeBoletines(boletinPrimerT, i, alumno);
+			
+			
+			
+			
+		}
+		Leer.mensaje("Nombre    Apellido    1º Trimestre    2º Trimestre   3º Trimestre");
+		for (alumnos alumno : listaAlumnos) {
+			Leer.mensaje(alumno.toString());
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	private static TreeMap<Integer, ArrayList<String>> generadorDeBoletines(TreeMap<Integer, ArrayList<String>> boletinPrimerT, alumnos alumno) {
+		for (int j = 0; j < 11; j++) {
+			ArrayList<String> alumnos=new ArrayList<>();
+			if (alumno.getNota1() == j) {
+				if (boletinPrimerT.get(j)!=null) {
+						alumnos = boletinPrimerT.get(j);
+				}				
+				alumnos.add(alumno.getNombre()+" "+alumno.getApellido());
+				boletinPrimerT.put(j, alumnos);
+				break;
+			}
+		}
+		return boletinPrimerT;
+	}
+}

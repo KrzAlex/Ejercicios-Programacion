@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class alumnos {
+	private String nombre;
+	private String apellido;
+	private int nota1;
+	private int nota2;
+	private int nota3;
+	
+	
+	
+	
+}

@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<alumnos> listaAlumnos = new ArrayList<alumnos>();
+		
+		for (int i = 1; i <= 10; i++) {
+			alumnos alumno=new alumnos("Nombre "+i, "Apellido "+i, (int) (Math.random()*10+1), (int) (Math.random()*10+1), (int) (Math.random()*10+1));
+			listaAlumnos.add(alumno);
+		}
+		Leer.mensaje("Nombre    Apellido    1º Trimestre    2º Trimestre   3º Trimestre");
+		for (alumnos alumno : listaAlumnos) {
+			Leer.mensaje(alumno.toString());
+		}
+	}
+}
