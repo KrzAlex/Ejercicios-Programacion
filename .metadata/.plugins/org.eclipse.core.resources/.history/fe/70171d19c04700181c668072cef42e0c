@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Reloj {
+	
+	public Integer restarMin(Integer seg){
+		
+	}
+	
+}

@@ -1,0 +1,57 @@
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.TreeMap;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class pruebaFichero {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			FileOutputStream fichero = null; 
+			DataOutputStream salida = null;
+			TreeMap<String, Integer> armas=new TreeMap<>();
+	        
+	        try {
+	            fichero = new FileOutputStream("pruebaFichero.dat");
+	            salida = new DataOutputStream(fichero);
+	            salida.writeUTF("Ana");
+	            salida.writeDouble(8);
+	            salida.writeUTF("Juan");
+	            salida.writeDouble(9);
+	            fichero.close();
+	            salida.close();
+	            Leer.mostrarEnPantalla("FIN");
+	            
+	        } catch (FileNotFoundException ex) {
+	            Leer.mostrarEnPantalla("El fichero no existe: "+ex.getMessage());
+	        } catch (IOException ex) {
+	        	Leer.mostrarEnPantalla("Error de entrada/salida: "+ex.getMessage());
+	        } finally {
+	            try {
+	                if(fichero!=null)
+	                    fichero.close();
+	                if(salida!=null)
+	                    salida.close();
+	            } catch (IOException ex) {
+	            	Leer.mostrarEnPantalla("Error al cerrar fichero: " + ex.getMessage());
+	            }
+	        }
+		
+		
+		
+		
+	}
+
+}

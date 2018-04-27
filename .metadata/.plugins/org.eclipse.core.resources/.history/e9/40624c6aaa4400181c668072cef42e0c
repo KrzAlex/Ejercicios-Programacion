@@ -1,0 +1,75 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+import javax.swing.RowFilter.Entry;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio5 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, ArrayList<Cliente>> ventanillas = new TreeMap<>();
+		for (int i = 1; i < 6; i++) {
+			ventanillas.put("Ventana " + i, (new ArrayList<Cliente>()));
+		}
+
+		for (int i = 300; i >= 0; i--) {
+
+			if (i % 5 == 0) {
+				Cliente cliente = crearCliente();
+
+			}
+			
+			
+			
+			
+			
+			for (java.util.Map.Entry<String, ArrayList<Cliente>> ventana : ventanillas.entrySet()) {
+				for (int j = 0; j < ventana.getValue().size(); j++) {
+					ventana.getValue().get(j).restarMin();
+					if (ventana.getValue().get(j).getRestante()==0) {
+						ventana.getValue().remove(j);
+					}
+				}
+				
+				
+				
+			}
+			
+		}
+
+	}
+
+	private static String colamenor(TreeMap<String, ArrayList<Cliente>> ventanillas) {
+		String cola = "";
+		for (java.util.Map.Entry<String, ArrayList<Cliente>> ventana : ventanillas.entrySet()) {
+
+		}
+
+		return cola;
+	}
+
+	private static Cliente crearCliente() {
+		Integer tiempo = (int) Math.random() * 101;
+		if (tiempo <= 60) {
+			tiempo = 10;
+		} else if (tiempo > 60 && tiempo <= 85) {
+			tiempo=15;
+		} else {
+			tiempo=20;
+		}
+		Cliente cliente = new Cliente(tiempo);
+		return cliente;
+	}
+
+}

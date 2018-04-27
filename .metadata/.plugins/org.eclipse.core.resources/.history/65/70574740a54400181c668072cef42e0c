@@ -1,0 +1,34 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Cliente {
+	private Integer restante;
+
+	public Integer getRestante() {
+		return restante;
+	}
+
+	public void setRestante(Integer restante) {
+		this.restante = restante;
+	}
+
+	public Cliente(Integer restante) {
+		this.restante = restante;
+	}
+	
+	public void restarMin(){
+		restante--;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [restante=" + restante + "]";
+	}
+	
+	
+}

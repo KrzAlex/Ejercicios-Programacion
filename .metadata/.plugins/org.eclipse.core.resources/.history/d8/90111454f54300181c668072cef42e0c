@@ -1,0 +1,189 @@
+import java.security.KeyStore.Entry;
+import java.util.TreeMap;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio4 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Integer opcion = 9;
+		TreeMap<String, String> listaUsuarios = new TreeMap<String, String>();
+
+		while (opcion > 0) {
+
+			Leer.mensaje("1. Insertar Usuario");
+			Leer.mensaje("2. Borrar Usuario");
+			Leer.mensaje("3. Modificar Claves");
+			Leer.mensaje("4. Validar Usuario");
+			opcion = Leer.pedirEntero("0. Salir");
+			menu(opcion, listaUsuarios);
+			Leer.mensaje("");
+		}
+	}
+
+	private static void menu(Integer opcion, TreeMap<String, String> listaUsuarios) {
+		Boolean verificador = false;
+		switch (opcion) {
+		case 1:
+			anadirUsuario(listaUsuarios, verificador);
+
+			break;
+		case 2:
+			borrarUsuario(listaUsuarios, verificador);
+
+			break;
+		case 3:
+			String usuario, contraseña, contraCodificado = "";
+
+			usuario = Leer.pedirCadena("Que usuario desea modificar?");
+			usuario = verificarExistenciaUsuario(listaUsuarios, verificador, usuario, 0);
+
+			contraseña = verificadorContra();
+			contraCodificado = codificadorContra(contraCodificado, contraseña);
+			
+			String newContra=Leer.pedirCadena("Cual es la nueva contraseña de "+usuario);
+			String newCodificado=codificadorContra(contraCodificado, newContra);
+
+			break;
+		case 4:
+			verificarUsuario(listaUsuarios, verificador);
+			break;
+		case 5:
+			mostrarUsuarios(listaUsuarios);
+			break;
+		default:
+			opcion--;
+			break;
+		}
+	}
+
+	private static void anadirUsuario(TreeMap<String, String> listaUsuarios, Boolean verificador) {
+		String usuario, contraseña, contraCodificado = "";
+
+		usuario = Leer.pedirCadena("Introduzca el nombre de usuario");
+
+		usuario = verificarExistenciaUsuario(listaUsuarios, verificador, usuario, 1);
+
+		contraseña = verificadorContra();
+		contraCodificado = codificadorContra(contraCodificado, contraseña);
+
+		listaUsuarios.put(usuario, contraCodificado);
+	}
+
+	private static void borrarUsuario(TreeMap<String, String> listaUsuarios, Boolean verificador) {
+		String usuario, contraseña, contraCodificado = "";
+		usuario = Leer.pedirCadena("Que usuario desea borrar?");
+		usuario = verificarExistenciaUsuario(listaUsuarios, verificador, usuario, 0);
+
+		verificadorContraUsuario(listaUsuarios, usuario, contraCodificado, 1);
+		listaUsuarios.remove(usuario);
+	}
+
+	private static void verificarUsuario(TreeMap<String, String> listaUsuarios, Boolean verificador) {
+		String usuario, contraseña;
+		usuario = Leer.pedirCadena("Introduzca el nombre del usuario");
+		usuario = verificarExistenciaUsuario(listaUsuarios, verificador, usuario, 0);
+		contraseña=verificadorContra();
+		verificadorContraUsuario(listaUsuarios, usuario, 0);
+	}
+
+	// Metodo extra
+	private static void mostrarUsuarios(TreeMap<String, String> listaUsuarios) {
+		for (java.util.Map.Entry<String, String> usuario : listaUsuarios.entrySet()) {
+			Leer.mensaje(usuario.getKey() + " " + usuario.getValue());
+		}
+	}
+
+	// Metodos Reutilizables
+
+	private static String codificadorContra( String contraseña) {
+		String contraCodificado="";
+		int num;
+		char codigo;
+		for (int i = 0; i < contraseña.length(); i++) {
+			num = contraseña.codePointAt(i) + 2;
+			codigo = (char) num;
+			contraCodificado = contraCodificado + codigo;
+		}
+		return contraCodificado;
+	}
+
+	private static String verificadorContra() {
+		String caracteresValidos = "QWERTYUIOPLKJHGFDSAZXCVBNMqwertyuioplkjhgfdsazxcvbnm1234567890";
+		Boolean verificador;
+		String contraseña;
+		verificador = false;
+		contraseña = Leer.pedirCadena("Introduzca su contraseña");
+		while (!verificador) {
+			for (int i = 0; i < contraseña.length(); i++) {
+				if (caracteresValidos.indexOf(contraseña.substring(i, i + 1)) != -1) {
+					verificador = true;
+				} else {
+					verificador = false;
+					break;
+				}
+			}
+			if (!verificador) {
+				contraseña = Leer.pedirCadena("Valores incorrectos, vuelva a introducir una nueva contraseña");
+			}
+		}
+		return contraseña;
+	}
+
+	private static String verificarExistenciaUsuario(TreeMap<String, String> listaUsuarios, Boolean verificador,
+			String usuario, Integer opcion) {
+		if (!listaUsuarios.isEmpty()) {
+			while (!verificador) {
+				if (listaUsuarios.containsKey(usuario)) {
+					verificador = true;
+					if (opcion == 1) {
+						usuario = Leer.pedirCadena("Usuario existente, Por favor vuelva a introducir un usuario");
+						verificador = false;
+					}
+				} else if (opcion == 1) {
+					verificador = true;
+				} else {
+					usuario = Leer.pedirCadena(
+							"Usuario inexistente, Por favor vuelva a introducir un nuevo nombre de usuario");
+				}
+			}
+		}
+		return usuario;
+	}
+
+	private static void verificadorContraUsuario(TreeMap<String, String> listaUsuarios, String usuario,
+		Integer opcion) {
+		String contraCodificado="";
+		Boolean verificador;
+		String contraseña;
+		verificador = false;
+		while (!verificador) {
+			contraseña = verificadorContra();
+			contraCodificado = codificadorContra(contraseña);
+			if (contraCodificado.equals(listaUsuarios.get(usuario))) {
+				if (opcion == 1) {
+					Leer.mensaje("Usuario eliminado");
+					verificador = true;
+				} else {
+					Leer.mensaje("Usuario validado");
+					verificador = true;
+				}
+
+			} else {
+				Leer.mensaje("Contraseña incorrecta");
+				contraCodificado = "";
+			}
+		}
+	}
+
+}

@@ -1,0 +1,45 @@
+import java.util.TreeMap;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Comedor {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, Integer> ingredientes=bIngredientes();
+		
+		Leer.mensaje(ingredientes.toString());
+		
+		
+		
+		
+		
+	}
+	
+	private static TreeMap<String, Integer> bIngredientes(){
+		TreeMap<String, Integer> ingredientes= new TreeMap<>();
+		ingredientes.put("Ingre 7", 5);
+		ingredientes.put("Ingre 10", 10);
+		ingredientes.put("Ingre 6", 9);
+		ingredientes.put("Ingre 9", 3);
+		ingredientes.put("Ingre 5", 6);
+		return ingredientes;
+	}
+	
+	private static TreeMap<String, TreeMap<String, Integer>> bPlatos(TreeMap<String, Integer> ingredientes){
+		TreeMap<String, TreeMap<String, Integer>> platos= new TreeMap<>();
+		
+		
+		
+		return platos;
+	}
+}

@@ -1,0 +1,25 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio5 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, ArrayList<Cliente>> ventanillas=new TreeMap<>();
+		
+		
+		
+	}
+
+}

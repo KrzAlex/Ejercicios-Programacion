@@ -16,7 +16,7 @@ public class Ejercicio3 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<alumnos> listaAlumnos = new ArrayList<alumnos>();
+		ArrayList<Alumnos> listaAlumnos = new ArrayList<Alumnos>();
 
 		TreeMap<Integer, ArrayList<String>> boletinPrimerT = new TreeMap<>();
 		for (int i = 0; i < 11; i++) {
@@ -32,12 +32,12 @@ public class Ejercicio3 {
 		}
 
 		for (int i = 1; i <= 50; i++) {
-			alumnos alumno = null;
+			Alumnos alumno = null;
 			if (i < 10) {
-				alumno = new alumnos("Alum " + i, " Apell " + i, (int) (Math.random() * 11),
+				alumno = new Alumnos("Alum " + i, " Apell " + i, (int) (Math.random() * 11),
 						(int) (Math.random() * 11), (int) (Math.random() * 11));
 			} else {
-				alumno = new alumnos("Alum " + i, "Apell " + i, (int) (Math.random() * 11),
+				alumno = new Alumnos("Alum " + i, "Apell " + i, (int) (Math.random() * 11),
 						(int) (Math.random() * 11), (int) (Math.random() * 11));
 			}
 			listaAlumnos.add(alumno);
@@ -89,7 +89,7 @@ public class Ejercicio3 {
 
 	private static void menu(TreeMap<Integer, ArrayList<String>> boletinPrimerT,
 			TreeMap<Integer, ArrayList<String>> boletinSegundoT, TreeMap<Integer, ArrayList<String>> boletinTercerT,
-			Integer opcion, ArrayList<alumnos> listaAlumnos) {
+			Integer opcion, ArrayList<Alumnos> listaAlumnos) {
 		switch (opcion) {
 		case 1:
 
@@ -126,7 +126,7 @@ public class Ejercicio3 {
 			break;
 		case 4:
 			Leer.mensaje("Nombre    Apellido    1º Trimestre    2º Trimestre   3º Trimestre");
-			for (alumnos alumno : listaAlumnos) {
+			for (Alumnos alumno : listaAlumnos) {
 				Leer.mensaje(alumno.toString());
 			}
 			break;

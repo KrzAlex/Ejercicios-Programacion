@@ -1,0 +1,83 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+import javax.swing.RowFilter.Entry;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio5 {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		TreeMap<String, ArrayList<Cliente>> ventanillas = new TreeMap<>();
+		for (int i = 1; i < 6; i++) {
+			ventanillas.put("Ventana " + i, (new ArrayList<Cliente>()));
+		}
+		
+		ArrayList <Integer> media=new ArrayList<>();
+		
+		for (int i = 300; i >= 0; i--) {
+
+			if (i % 15 == 0) {
+				
+			}
+
+			if (i % 5 == 0) {
+				insertarTarea(ventanillas);
+			}
+
+			for (java.util.Map.Entry<String, ArrayList<Cliente>> ventana : ventanillas.entrySet()) {
+				System.out.println(ventana.getKey() + ": " + ventana.getValue().toString());
+
+			}
+
+			for (java.util.Map.Entry<String, ArrayList<Cliente>> ventana : ventanillas.entrySet()) {
+				for (int j = 0; j < ventana.getValue().size();) {
+					ventana.getValue().get(j).restarMin();
+					ventana.setValue(extraerCliente(ventana.getValue()));
+					break;
+				}
+			}
+			Thread.sleep(1000);
+		}
+
+	}
+
+	private static void insertarTarea(TreeMap<String, ArrayList<Cliente>> ventanillas) {
+		Cliente cliente = new Cliente();
+		String colamenor = asignarcola(ventanillas);
+		ventanillas.get(colamenor).add(cliente);
+	}
+
+	private static String asignarcola(TreeMap<String, ArrayList<Cliente>> ventanillas) {
+		String cola = "";
+		Integer clientesCola = 99;
+		for (java.util.Map.Entry<String, ArrayList<Cliente>> ventana : ventanillas.entrySet()) {
+			if (ventana.getValue().size() < clientesCola) {
+				cola = ventana.getKey();
+				clientesCola = ventana.getValue().size();
+			}
+		}
+
+		return cola;
+	}
+
+	private static ArrayList<Cliente> extraerCliente(ArrayList<Cliente> cliente) {
+
+		if (cliente.get(0).getRestante() == 0) {
+			cliente.remove(0);
+		}
+
+		return cliente;
+	}
+}

@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Reloj {
+	
+	public String restarMin(Integer seg){
+		String reloj="";
+		
+		
+		
+		
+		return reloj;
+	}
+	
+}

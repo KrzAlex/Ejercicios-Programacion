@@ -1,3 +1,12 @@
 1523886972366	Extract method 'menu'
 1523887427419	Rename local variable 'j'
 1523887637769	Delete element
+1523971049397	Extract method 'anadirUsuario'
+1523971515370	Extract method 'verificadorContra'
+1523971621060	Extract method 'codificadorContra'
+1523972154324	Extract method 'verificarUsuario'
+1523973518372	Extract method 'verificarExistenciaUsuario'
+1523975773832	Extract method 'verificadorContraUsuario'
+1523975839852	Extract method 'borrarUsuario'
+1524157396828	Extract method 'mostrarUsuarios'
+1524158277830	Extract method 'modificarContra'

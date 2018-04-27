@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Cliente {
+	private Integer restante;
+
+	public Integer getRestante() {
+		return restante;
+	}
+
+	public void setRestante(Integer restante) {
+		this.restante = restante;
+	}
+	
+	
+	
+}

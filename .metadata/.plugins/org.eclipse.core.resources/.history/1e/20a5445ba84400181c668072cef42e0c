@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.TreeMap;
+
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Ejercicio5 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeMap<String, ArrayList<Cliente>> ventanillas = new TreeMap<>();
+		for (int i = 1; i < 6; i++) {
+			ventanillas.put("Ventana " + i, (new ArrayList<Cliente>()));
+		}
+
+		for (int i = 300; i >= 0; i--) {
+
+			if (i % 5 == 0) {
+				
+				
+				
+			}
+
+		}
+
+	}
+	
+	private static void colamenor(TreeMap<String, ArrayList<Cliente>> ventanillas){
+		for (int i = 0; i < array.length; i++) {
+			
+		}
+		
+		
+	}
+	
+	
+	
+	private static Cliente crearCliente(){
+		Cliente cliente=new Cliente((int)Math.random()*101);
+		return cliente;
+	}
+
+}

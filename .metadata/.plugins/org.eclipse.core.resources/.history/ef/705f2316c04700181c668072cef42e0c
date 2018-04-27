@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+
+/**
+ * @author usuario
+ *
+ */
+public class Reloj {
+	
+	public void restarMin(){
+		
+	}
+	
+}
